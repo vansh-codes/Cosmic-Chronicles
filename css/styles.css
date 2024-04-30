@@ -1,0 +1,182 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: #000; */
+    /* background-image: url('https://res.cloudinary.com/yerevan/image/upload/v1484080037/space_xref1i.jpg'); */
+    background-image: url('/images/background-small.jpg');
+    /* filter: brightness(50%); */
+    /* backdrop-filter: blur(1px); */
+    /* background-image: url('sunrise.jpg'); */
+    background-size: cover;
+    overflow: hidden;
+  }
+  
+  .start-button {
+    font-size: 3em;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+   /*  background-image: url('https://res.cloudinary.com/yerevan/image/upload/v1484080037/space_xref1i.jpg'); */
+    background-size: cover;
+    /* background-image: url('sunrise.jpg'); */
+    /* background: #000; */
+    opacity: 0;
+    z-index: 1;
+  }
+
+  .hidden {
+    display: none;
+  }
+  
+  .welcome-message {
+    font-size: 4em;
+    color: #fff;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+  }
+  
+/*   .welcome-message p {
+    margin: 0;
+  }
+  
+  .welcome-message p:nth-child(2) {
+    margin-top: 10px;
+  }
+ */
+  .input-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2;
+  }
+  
+  .input-question {
+    font-size: 1.5em;
+    color: #fff;
+  }
+  
+  .input-box {
+    margin-top: 20px;
+  }
+  
+  .input-box input {
+    padding: 10px;
+    width: 200px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+  }
+  
+  .input-box button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: #fff;
+    font-size: 1em;
+    cursor: pointer;
+  }
+  
+  #errorMsg {
+    font-size: 1em;
+    color: #ff0000;
+  }
+  
+  #error-message{
+    margin-top: 10px;
+    margin-left: 40px;
+    width: max-content;
+    text-align: center;
+  }
+
+
+  #avatar {
+    position: absolute;
+    height: 150px;
+    width: 300px;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10
+    /* mix-blend-mode: color-burn; */
+  }
+  
+  #earth {
+    position: absolute;
+    height: 400px;
+    width: 300px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10
+  }
+
+  .story{
+    color: white;
+    font-size: larger;
+    position: absolute;
+   /*  border: 1px solid red; */
+    margin: auto 0;
+    bottom: 0;
+    z-index: 5;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+  }
+
+  .story-fade-to-solar-system{
+    opacity: 0;
+  }
+
+  .stars-bg{
+    background-color: "";
+      background-image: "url('sunrise.jpg')";
+      z-index:16;
+      width: 100wh;
+      height: 100vh;
+      background-size: cover;
+      display: block;
+    }
+
+  .typewriter p{
+    color: #fff;
+    font-family: monospace;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .1em solid orange; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+      typing 1.5s steps(30, end),
+      blink-caret .5s step-end infinite;
+  }
+  
+  /* The typing effect */
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: rgb(255, 255, 255) }
+  }

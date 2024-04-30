@@ -1,0 +1,280 @@
+body,html{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    scroll-behavior: smooth;
+    background-color: #d8d8d8;
+}
+
+.navbar-links li a{
+    color: #bbb;
+}
+
+section{
+    background-color: #d8d8d8;
+    margin: 0;
+    padding-top: 100px;
+}
+
+section div.theory-section{
+    /* border: 1px solid red; */
+    /* position: relative; */
+    z-index: 9;
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    /* gap: 10px; */
+}
+
+section .theory-section .table-content h3{
+    color: black;
+    /* margin-left: 40px; */
+    margin-bottom: 20px;
+}
+
+section .theory-section .table-content{
+    /* position: sticky; */
+    /* margin-top: 100px; */
+    width: 100%;
+    padding: 20px;
+    /* border: 1px solid yellow; */
+    float: left;
+    margin-left: 40px;
+    line-height: 2.4rem;
+    flex-basis: 200;
+}
+
+section .theory-section .table-content li{
+    list-style-type: none;
+}
+
+section .theory-section .table-content li a{
+    text-decoration: none;
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+    padding-left: 20px;
+    border-left: 1px solid rgb(31, 30, 30);
+    scroll-behavior: smooth;
+}
+
+section .theory-section .table-content li a:hover{
+    border-left: 3px solid black;
+    
+}
+
+section .theory-section .theory-container{
+    font-size: 110%;
+    flex-basis: 200;
+    line-height: 1.5rem;
+    letter-spacing: .13rem;
+    color: black;
+    /* padding-top: 50px; */
+    padding: 50px 4rem 0 4rem;
+    width: 90%;
+    /* border: 1px solid blue; */
+}
+
+section .theory-section .theory-container .theory-heading{
+    position: absolute;
+    font-size: 4rem;
+    padding: 20px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    line-height: 3rem;
+}
+
+section .theory-section .theory-container .theory-content{
+    /* padding-top: 20px; */
+    margin-top: 7em;
+    padding-bottom: 17%;
+}
+
+section .theory-section .theory-container .theory-img img{
+    width: 90%;
+    padding: 0 0 50px 0;
+    /* margin-top: -50px; */
+    /* mix-blend-mode: color; */
+    /* border: 1px solid red; */
+    /* width: 9%; */
+}
+
+section .keep-exploring{
+    margin-left: 50px;
+    letter-spacing: .4rem;
+    font-size: 150%;
+    font-weight: 600;
+}
+
+section .theory-section .theory-container .theory-content ul li{
+    list-style-type: disc;
+}
+
+section .explore-more-container{
+    /* border: 1px solid red; */
+    margin: 0 20px;
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    gap: 30px;
+    padding: 10px;
+}
+
+section .explore-more-container .explore-item{
+    cursor: pointer;
+    /* max-width: 33%; */
+    flex-wrap: wrap;
+    width: 55%;
+    /* border: 1px solid yellow; */
+    padding: 20px;
+}
+
+section .explore-more-container .explore-item a .explore-item-img-black-hole{
+    background-image: url("../images/theories/black-hole.jpg");
+    height: 600px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 100;
+    /* background-color: #bbb; */
+}
+
+section .explore-more-container .explore-item a .explore-item-img-sun{
+    background-image: url("../images/theories/sun-theory.jpg");
+    height: 600px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 100;
+    /* background-color: #bbb; */
+}
+
+section .explore-more-container .explore-item a .explore-item-img-big-bang{
+    background-image: url("../images/theories/big-bang.jpg");
+    height: 600px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 100;
+    /* background-color: #bbb; */
+}
+
+section .explore-more-container .explore-item a .explore-item-img-galaxies{
+    background-image: url("../images/theories/galaxy.jpg");
+    height: 600px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 100;
+    /* background-color: #bbb; */
+}
+
+section .explore-more-container .explore-item a .explore-item-img-dark-matter{
+    background-image: url("../images/theories/dark-matter.jpg");
+    height: 600px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 100;
+    /* background-color: #bbb; */
+}
+
+section .explore-more-container .explore-item .explore-item-name{
+    color: white;
+    /* font-size: 200%; */
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-weight: 800;
+    margin-top: -4rem;
+    margin-left: 1.3rem;
+}
+
+section .explore-more-container .explore-item .explore-item-arrow{
+    color: white;
+    float: right;
+    margin-right: 30px;
+    font-size: 100%;
+    margin-top: -30px;
+    border-radius: 50%;
+    background-color: red;
+    padding: 3px;
+    z-index: 20;
+}
+
+section .theory-content table{
+    border-collapse: collapse;
+}
+
+section .theory-content table .col{
+    width: 27%;
+    text-align: center;
+    line-height: 3rem;
+    padding: 20px;
+}
+
+section .theory-content table .col .block-no{
+    font-family: "DM Mono", monospace;
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+section .theory-content table .col .block-desc{
+    font-weight: 600;
+    width: 100%;
+    line-height: 1.2rem;
+    padding: 20px 0;
+}
+
+section .theory-content table .col .block-data{
+    line-height: 1.3rem;
+    font-size: .8rem;
+    letter-spacing: .07rem;
+}
+
+
+@media screen and (max-width: 768px) {
+    /* .explore-more-container {
+      flex-direction: column; 
+    } */
+    
+    /* .explore-item{
+        flex-basis: 100%;
+        height: 400px;
+    } */
+
+    section .explore-more-container .explore-item{
+        width: 60%;
+    }
+
+    section .theory-section .table-content{
+        width: 100%;
+        /* margin-left: 5px;j */
+    }
+
+    section .theory-section .theory-container{
+        width: 100%;
+        text-wrap: wrap;
+        padding: 20px;
+        margin: 20px;
+    }
+
+    section .explore-more-container .explore-item a .explore-item-img-black-hole{
+        height: 300px;
+        border: 1px solid red;
+    }
+
+    section .explore-more-container .explore-item a .explore-item-img-dark-matter{
+        height: 300px;
+    }
+
+    section .explore-more-container .explore-item a .explore-item-img-big-bang{
+        height: 300px;
+    }
+
+    section .explore-more-container .explore-item a .explore-item-img-galaxies{
+        height: 300px;
+    }
+
+    section .explore-more-container .explore-item a .explore-item-img-sun{
+        height: 300px;
+    }
+}

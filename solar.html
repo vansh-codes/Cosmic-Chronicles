@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar System | Cosmic Chronicles</title>
+    <style>
+        :root{
+            --dark-blue: #04021f;
+            --sky-blue: #00abf1;
+            --slider-height: 50rem;
+            --half-slider-height: calc(var(--slider-height)/2);
+        }
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            border: none;
+            font-family: sans-serif;
+            list-style: none;
+        }
+
+        body{
+            min-height: 100vh;
+            /* background-color: var(--dark-blue); */
+            background-image: url("./images/background-small.jpg");
+            overflow: hidden;
+        }
+
+        .flex-center{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .circular-slider{
+            position: relative;
+            top: 50vh; 
+            width: var(--slider-height);
+            height: var(--slider-height);
+
+            color: #fff;
+            text-align: center;
+        }
+
+        .wrapper{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transform:  rotateZ(-360deg);
+            transition: 1s ease-in-out;
+            /* z-index: 200; */
+        }
+
+        .slides{
+            position: absolute;
+            left: 0;
+            transform: rotateZ(calc(360deg/10 * var(--img-no))) translateY(var(--half-slider-height));  /* 360/n -> n = no. of images */
+            width: 19vw; 
+            transform-origin: var(--half-slider-height);
+            /* transition: 1s ease; */
+            cursor: pointer;
+        }
+        
+        .slides img{
+            width: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            transform: rotateZ(calc(360deg/-10 * var(--img-no))) scale(var(--scale, 0.9));        /* to align images vertially straight */
+            transition: .4s ease;
+            aspect-ratio: 1/1;
+            user-select: none;
+        }
+
+        .slides img:hover{
+            width: 110%;
+            cursor: pointer;
+        }
+
+        .planet-name{
+            position: absolute;
+            font: 600 8rem sans-serif;
+            text-transform: uppercase;
+
+            transform: translate(-80%, -450%);
+            opacity: 0;
+            white-space: pre;
+            color: transparent;
+            -webkit-text-stroke: 1px var(--sky-blue);
+            transform: translateY(-450%);
+            
+            transition: .7s ease-in-out, opacity .5s;
+        }
+        
+        .planet-name.active{
+            transform: translate(0%, -450%);
+            opacity: 1;
+            transition: .4s ease-in-out, opacity 1s;
+        }
+
+        .description{
+            position: absolute;
+            bottom: 45%;
+            height: var(--half-slider-height);
+            z-index: 100;
+        }
+
+        .description .desc-items{
+            width: 70%;
+            height: 0%;
+            margin: 0 auto;
+            opacity: 0;
+            transition: .2s ease-in-out .1s, height .6s .1s;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .description .desc-items.active{
+            opacity: 1;
+            display: flex;
+            height: 100%;
+        }
+
+        .desc-items p{
+            margin: 1rem 0;
+        }
+
+        .desc-items button{
+            padding: 16px 33px;
+            border-radius: 9px;
+            background-color: var(--sky-blue);
+            border: none;
+            text-align: center;
+            cursor: pointer;
+            transition: 0.4s;
+        }
+
+        .desc-items button a{
+            color: #000;
+            text-decoration: none;
+            text-wrap: nowrap;
+        }
+
+        .desc-items button:hover{
+            box-shadow: 7px 5px 56px -14px #dcdde0;
+            /* font-weight: bold; */
+        }
+
+        .desc-items button:active{
+            transform: scale(0.97);
+            box-shadow: 7px 5px 56px -10px #ffffff;
+        }
+
+        .note{
+            position: fixed;
+            color: #fff;
+            position: absolute;
+            /* margin: 0px -1230px -640px 0; */
+            font-size: small;
+            bottom: 0;
+            right: 10px;
+        }
+
+        .hidden{
+            display: none;
+        }
+
+    </style>
+</head>
+
+<body class="flex-center">
+    <div class="circular-slider flex-center">
+        <h1 class="planet-name active">EARTH</h1>
+        <ul class="wrapper flex-center">
+            <li class="slides" style="--img-no:1;">
+                <img src="./images/uranus.png" alt="uranus"> <!-- uranus.png -->
+            </li>
+            <li class="slides" style="--img-no:2;">
+                <img src="./images/mars.png" alt="mars">   <!-- mars -->
+            </li>
+            <li class="slides" style="--img-no:3;">
+                <img src="./images/mercury.png" alt="mercury">     <!-- mercury -->
+            </li>
+            <li class="slides" style="--img-no:4;">
+                <img src="./images/earth.png"  alt="earth">    <!-- earth -->
+            </li>
+            <li class="slides" style="--img-no:5;">
+                <img src="./images/VENUS.png" alt="VENUS"> <!-- venus -->
+            </li>
+            <li class="slides" style="--img-no:6;">
+                <img src="./images/saturn.png" alt="saturn">   <!-- Saturn -->
+            </li>
+            <li class="slides" style="--img-no:7;">
+                <img src="./images/jupiter.png" alt="jupiter">  <!-- Jupiter -->
+            </li>
+            <li class="slides" style="--img-no:8;">
+                <img src="./images/neptune.png" alt="neptune">  <!-- neptune -->
+            </li>
+            <li class="slides" style="--img-no:9;">
+                <img src="./images/moon-cropped-1.png" alt="moon">   <!-- moon -->
+            </li>
+            <li class="slides" style="--img-no:10;">
+                <img src="./images/solar-flare-removebg-preview.png" alt="sun">      <!-- sun -->
+            </li>
+        </ul>
+  
+            <!-- ====== DESCRIPTION OF IMAGES ====== -->
+        <div class="description">
+            <div class="desc-items">
+                <h1>Uranus</h1>
+                <p>Tilted sideways and spins like a rolling ball</p>
+                <a href="/planets/uranus"><button>View more</button></a>
+            </div>
+
+            <div class="desc-items">
+                <h1>Mars</h1>
+                <p>Red dust covers its surface, has two moons</p>
+                <a href="/planets/mars"><button>View more</button></a>
+            </div>
+
+            <div class="desc-items">
+                <h1>Mercury</h1>
+                <p>Hottest planet, despite being farthest from the Sun</p>
+                <a href="/planets/mercury"><button>View more</button></a>
+            </div>
+
+            <div class="desc-items active">
+                <h1>Earth</h1>
+                <p>The only planet known to support life (so far)</p>
+                <a href="/planets/earth"><button>View more</button></a>
+            </div>
+
+            <div class="desc-items">
+                <h1>Venus</h1>
+                <p>Has a thick atmosphere, hotter than lead melting point</p>
+                <a href="/planets/venus"><button>View more</button></a>
+            </div>
+            
+            <div class="desc-items">
+                <h1>Saturn</h1>
+                <p>Famous for its rings made of billions of ice particles</p>
+                <a href="/planets/saturn"><button>View more</button></a>
+            </div>
+            
+            <div class="desc-items">
+                <h1>Jupiter</h1>
+                <p> Largest planet, with a Great Red Spot bigger than Earth</p>
+                <a href="/planets/jupiter"><button>View more</button></a>
+            </div>
+            
+            <div class="desc-items">
+                <h1>Neptune</h1>
+                <p>Supersonic winds rage, has a Great Dark Spot</p>
+                <a href="/planets/neptune"><button>View more</button></a>
+            </div>
+            
+            <div class="desc-items">
+                <h1>Moon</h1>
+                <p>Earth's only natural companion, with phases caused by sunlight</p>
+                <a href="/planets/moon"><button>View more</button></a>
+            </div>
+            <div class="desc-items">
+                <h1>Sun</h1>
+                <p>A giant ball of fire, our source of light and life</p>
+                <a href="/planets/sun"><button>View more</button></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="note">
+        <p>*Image size doesnt resemble to the original size</p>
+    </div>
+    
+
+    <!-- ======== SCRIPT ============ -->
+
+    <script>
+        const circular_slider = document.querySelector('.wrapper');
+        const slides = document.querySelectorAll('.slides');
+        const images = document.querySelectorAll('.slides img');
+        const planet_name = document.querySelector('.planet-name');
+        const desc_items = document.querySelectorAll('.desc-items');
+        const view_more = document.querySelectorAll('.desc-items button');
+        const desc = document.querySelector('.description');
+        const info = document.querySelectorAll('.info');
+        const body = document.querySelector('body');
+
+        slides.forEach(function(slide,i){
+            slide.onclick = function(){
+                circular_slider.style.transform = `rotateZ(-${360/10*(i+7)}deg)`;
+
+                    //to bring the tapped image on front
+                console.log("i: " + i);
+                console.log("rotateZ(${360/10*(i+7)}deg): " + `rotateZ(${360/10*(i+7)}deg)`);
+
+                planet_name.classList.remove('active');
+                
+                setTimeout(function(){
+                    planet_name.textContent = desc_items[i].querySelector('h1').textContent;
+                    planet_name.classList.add('active');
+                }, 600)
+
+                images.forEach(function(img,i){
+                    img.style.setProperty('--img-no',4);
+                    img.style.setProperty('transition','.6s ease')
+                    desc_items[i].classList.remove('active');
+                    console.log("img: " + i);
+                    console.log("in images");
+                });
+            desc_items[i].classList.remove('hidden');
+            desc_items[i].classList.add('active');
+            slide.querySelector('img').classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>

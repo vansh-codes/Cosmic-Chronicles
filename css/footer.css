@@ -1,0 +1,178 @@
+.footer{
+    position: relative;
+    /* background-color: #111111; */
+    background-color: #131418;
+    /* background-color: red; */
+    margin: 0;
+    padding: 70px 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+    bottom: 0;
+    height: 300px;
+    width: 100%;
+    z-index: 10;
+}
+
+.hr{
+    width: 80%;
+    margin: 7% 0 5% 10%;
+    /* margin-top: 10%; */
+    /* margin-left: 10%; */
+}
+
+.footer-container{
+    /* border: 1px solid red; */
+    max-width: 1170px;
+    margin: auto;
+    z-index: 10;
+    /* padding: 70px 0; */
+}
+
+ul{
+    list-style-type: none;
+}
+
+.footer-row{
+    /* border: 1px solid yellow; */
+    background-color: #131418;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    /* margin-bottom: 10px ; */
+}
+
+.footer-col{
+    /* border: 1px solid darkblue; */
+    width: 17%;
+    /* padding: 10px 15px;  0 15px */
+}
+
+ .footer-col a{
+    font-size: large;
+    position: relative;
+}
+
+.footer-col .logo img{
+    height: 200px;
+    width: 200px;
+    /* border: 1px solid red; */
+}
+
+/* .footer-col ul li:not(:last-child){
+    margin-bottom: 10px;
+} */
+
+.footer-col ul li a{
+    font-size: 1rem;
+    text-decoration: none;
+    font-weight: 300;
+    color: #bbbbbb;
+    transition: all 0.3s ease;
+    display: inline-block; /* Display inline block */
+    position: relative; /* Set position relative */
+}
+
+.footer-col ul li a:hover{
+    color: #ffffff;
+    /* padding-left: 8px; */
+}
+
+.footer-col ul li a:after{
+    content: '';
+    position: absolute; 
+    width: 100%; /* Full width */
+    transform: scaleX(0); 
+    height: 1px; 
+    bottom: 0; 
+    left: 0; 
+    background-color: #ddcfcf; 
+    transform-origin: bottom right; 
+    transition: transform 0.35s ease-out;
+}
+
+.footer-col ul li a:hover:after{
+    transform: scaleX(1); /* Scale the underline on hover */
+    transform-origin: bottom left; /* Set transform origin */
+}
+
+.footer-col .social-links a{
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255,255,255,0.2);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #ffffff;
+    transition: all 0.4s ease;
+}
+
+.footer-col .social-links a:hover{
+    color: #24262b;
+    background-color: #ffffff;
+}
+
+.footer-col .newsletter form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    /* border: 1px solid yellow; */
+    /* margin-top: -100px; */
+}
+
+.footer-col .newsletter form p{
+    width: 100%;
+    font-size: 0.8rem;
+    margin: 0;
+    /* border: 1px solid red; */
+}
+
+.footer-col .newsletter form button,input{
+    padding: 0 10px;
+    border-radius: 5px;
+    color: black;
+    background-color: white;
+    border: none;
+    height: 30px;
+    font-size: large;
+}
+
+.footer-col .newsletter form button{
+    cursor: pointer;
+    background-color: rgb(95, 190, 238);
+}
+
+.footer-col .newsletter form button:hover{
+    /* color: red; */
+    font-weight: bold;
+}
+
+.copyright{
+    width: 100%;
+    margin: 0;
+    background-color: #131418;
+}
+
+.copyright p{
+    margin: 0;
+    color: #bbb;
+    /* height: 10px; */
+    height: fit-content;
+    width: 100%;
+    text-align: center;
+}
+
+/* Responsiveness */
+@media(max-width:  767px){
+    .footer-col{
+        width: 30%;
+        margin-bottom: 30px;
+    }
+}
+
+@media(max-width:  574px){
+    .footer-col{
+        width: 50%;
+    }
+}

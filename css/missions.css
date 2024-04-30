@@ -1,0 +1,11 @@
+body,html{
+    margin: 0;
+    padding: 0;
+    background-color: #bbb;
+    /* position: absolute; */
+}
+
+section{
+    padding-top: 100px;
+    border: 1px solid red;
+}

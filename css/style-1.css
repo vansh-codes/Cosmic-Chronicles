@@ -1,0 +1,349 @@
+*{
+    margin: 0;
+    padding: 0;
+    /* color: #f2f5f7; */
+    color: #bbbbbb;
+    
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    font-weight: 300;
+    scroll-behavior: smooth;
+}
+
+body{
+    overflow-x: hidden;
+    background-color: #131418;
+}
+
+.hero-section{
+    /* position: relative; */
+    background: linear-gradient(135deg, rgba(0,0,0,1),rgba(0,0,0,0.2)), url("/images/sunrise.jpg");
+    background-size: cover;
+    /* height: 600px; */
+    height: 100vh;
+    width: 100%;
+    z-index: 5;
+    margin-left: 50%;
+    transform: translate(-50%, -15%);
+    margin-bottom: -90px;
+    /* border: 1px solid red; */
+    /* margin-top: -5%; */
+}
+
+
+.hero-heading{
+    /* font-size: xx-large; */
+    font-size: 2.5rem;
+    font-family: "Roboto", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+}
+
+.hero-heading h1,p{
+    text-align: center;
+    margin-top: 100px;
+    /* background-color: transparent; */
+    /* top: 50%; */
+    /* transform: translate(0, 50%); */
+    font-weight: bolder;
+}
+
+.hero-heading h1{
+    padding-top: 350px;
+    /* border: 1px solid yellow; */
+}
+
+.hero-heading p{
+    font-size: 80%;
+    margin-top: 0px;
+    text-align: center;
+}
+
+.hero-right-section{
+    /* border: 1px solid yellow; */
+    display: flex;
+    float: right;
+    margin-top: -45vh;
+    margin-right: 90px;
+    height: 70vh;
+    width: 400px;
+    transform: rotate(10deg);
+    animation: moveInSpace 12s ease-in-out infinite alternate;
+}
+
+@keyframes moveInSpace{
+    50% {
+        transform: translateY(30px) rotate(-20deg) scale(0.8); 
+     }
+}
+/* .hero-body{
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid red;
+} */
+
+.everyday-fact{
+    /* border: 1px solid red; */
+    width: 80%;
+    margin: 40px auto;
+    padding-bottom: 50px;
+    font-size: 2rem;
+    /* margin: 0 auto; */
+    /* padding-bottom: 50px; */
+}
+
+.pop-theories-container{
+    margin: 20px 40px;
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    align-items: center;
+    gap: 30px;
+    justify-content: center;
+    /* border: 1px solid red; */
+    /* border: 1px solid yellow; */
+}
+
+.pop-theory{
+    border: 1px solid rgb(65, 61, 61);
+    width: 33%;
+    flex-wrap: wrap;
+    flex-basis: 200;
+    border-radius: 25px;
+    box-shadow: 1px 5px 5px 2px black;
+    padding: 20px;
+    margin: 10px;
+    text-align: left;
+    height: 500px;
+}
+
+.theories-heading{
+    margin-left: 50px;
+    padding-top: 50px;
+}
+
+.pop-theory img{
+    border-radius: 25px 25px 0 0;
+    height: 300px;
+    width: 95%;
+    margin-left: 50%;
+    /* margin-top: 10px; */
+    transform: translate(-50%, 0);
+    /* border: 1px solid white; */
+    /* box-shadow: 1px 1px 7px 5px rgb(52, 48, 48); */
+    box-shadow: 1px 1px 9px 5px rgb(36, 33, 33);
+}
+
+.pop-theory h3,p{
+    text-align: left;
+    color: white;
+    padding-top: 10px;
+    margin-left: 40px;
+}
+
+.pop-theory h3{
+    font-weight: 600;
+}
+
+.pop-theory p{
+    margin-top: 10px;
+    /* border: 1px solid red; */
+    margin-left: -10px;
+    padding: 10px;
+}
+
+#moon-phase{
+    box-shadow: 1px 5px 5px 2px black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    width: auto;
+    padding: 20px;
+    margin: -40px 15% 60px 15%;
+    background-color: rgb(13, 12, 12);
+}
+
+#moon-phase #date,#moon-phase-name,#moon-phase-percentage,#moon-phase-next,#moon-phase-more{
+    color: white;
+    font-size: 1.3rem;
+    /* padding: 5px; */
+    line-height: 1.7rem;
+}
+
+#moon-phase #moon-phase-icon{
+    padding: 0px 10px 10px 10px;
+    margin-top: -20px;
+    font-size: 1500%;
+}
+
+#moon-phase #moon-phase-more a{
+    /* color: rgb(165, 215, 232); */
+    color: rgb(164, 172, 175);
+    text-decoration: none;
+}
+
+#moon-phase #moon-phase-more a:hover{
+    text-decoration: underline;
+}
+
+#moon-phase .moon-phase-note{
+    font-size: 0.8rem;
+    margin-top: 20px;
+    margin-bottom: -10px;
+    margin-left: 58%;
+}
+
+section .explore-more-container{
+    /* border: 1px solid red; */
+    margin: 5px 40px;
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    gap: 20px;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+section .explore-more-container .explore-item{
+    cursor: pointer;
+    /* max-width: 30%; */
+    width: 30%;
+    /* width: 45%; */
+    /* border: 1px solid yellow; */
+    padding: 15px;
+}
+
+section .explore-more-container .explore-item a .explore-item-img-black-hole{
+    background-image: url("../images/theories/black-hole.jpg");
+    height: 600px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 100;
+    /* background-color: #bbb; */
+}
+
+section .explore-more-container .explore-item a .explore-item-img-sun{
+    background-image: url("../images/theories/sun-theory.jpg");
+    height: 600px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 100;
+    /* background-color: #bbb; */
+}
+
+section .explore-more-container .explore-item a .explore-item-img-galaxies{
+    background-image: url("../images/theories/galaxy.jpg");
+    height: 600px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 100;
+    /* background-color: #bbb; */
+}
+
+section .explore-more-container .explore-item a .explore-item-img-dark-matter{
+    background-image: url("../images/theories/dark-matter.jpg");
+    height: 600px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 100;
+    /* background-color: #bbb; */
+}
+
+section .explore-more-container .explore-item a .explore-item-img-big-bang{
+    background-image: url("../images/theories/big-bang.jpg");
+    height: 600px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 100;
+    /* background-color: #bbb; */
+}
+
+section .explore-more-container .explore-item a .explore-item-img-mission-mars-poster{
+    background-image: url("../images/missions/missionMars_poster.jpeg");
+    height: 600px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 100;
+    /* background-color: #bbb; */
+}
+
+section .explore-more-container .explore-item a .explore-item-img-mission-chandrayaan1-poster{
+    background-image: url("../images/missions/chandrayaan1_poster.jpeg");
+    height: 600px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 100;
+    /* background-color: #bbb; */
+}
+section .explore-more-container .explore-item a .explore-item-img-mission-chandrayaan2-poster{
+    background-image: url("../images/missions/chandrayaan2_poster.jpeg");
+    height: 600px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 100;
+    /* background-color: #bbb; */
+}
+
+section .explore-more-container .explore-item .explore-item-name{
+    color: white;
+    font-size: 200%;
+    font-weight: 800;
+    margin-top: -60px;
+    margin-left: 10px;
+}
+
+section .explore-more-container .explore-item .explore-item-arrow{
+    color: white;
+    float: right;
+    margin-right: 30px;
+    font-size: 100%;
+    margin-top: -30px;
+    border-radius: 50%;
+    background-color: red;
+    padding: 3px;
+    z-index: 20;
+}
+
+
+
+@media(max-width: 768px){
+    .hero-right-section{
+        height: 45vh;
+        margin-top: -80vh;
+        border: 1px solid red;
+    }
+    section .explore-more-container .explore-item{
+        width: 60%;
+    }
+    #moon-phase{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .pop-theories-container {
+        flex-direction: column; /* Change to column layout on small screens */
+    }
+    
+    .pop-theory{
+        flex-basis: 100%; /* Make each item take full width on small screens */
+    }
+
+    #moon-phase{
+        width: 50%;
+    }
+    section .explore-more-container .explore-item{
+        width: 100%;
+    }
+}

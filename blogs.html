@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs | Cosmic Chronicles</title>
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+            font-family: sans-serif;
+            letter-spacing: 1px;
+            font-weight: 300;
+            background-color: #1f1f1f;
+            color: white;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        a{
+            color: #bbb;
+        }
+        
+        section{
+            padding: 120px 40px 40px 40px;
+        }
+
+        /* section div.blogs-1{
+            padding: 40px;  
+            border-radius: 10px;
+            border: 2px solid black;
+        } */
+
+        section div.blogs{
+            padding: 40px;
+            /* padding: 20px; */
+            /* border: 1px solid black; */
+            border-radius: 10px;
+            margin: 20px;
+            border: 2px solid black;
+            box-shadow: 1px 4px 4px 4px rgb(19, 19, 19);
+            border: none;
+        }
+
+        section .blog-heading{
+            /* width: fit-content; */
+            font-size: 30px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        section .blog-heading:hover{
+            text-decoration: underline;
+        }
+
+        section .blog-date{
+            margin-top: -20px;
+            /* margin-left: 10px; */
+            font-size: small;
+            color: rgb(181, 179, 179);
+            margin-bottom: 10px;
+        }
+
+        .img-caption{
+            font-style: italic;
+            font-size: 0.7rem;
+            /* padding-left: 25%; */
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ====== NAVBAR ====== -->
+    <nav style="margin-top: 0;">
+        <div class="logo">
+            <a href="/"><img src="./images/space-logo-removebg-preview.png" alt="Cosmo-logo"></a>
+        </div>
+        <div class="hamburger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+        <ul class="navbar-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="./solar-system-explore">Explore Space</a></li>
+            <li><a href="./cosmic-blast">Games</a></li>
+            <li><a href="./rockets">Rockets</a></li>
+            <li><a href="" class="active">Blogs</a></li>
+            <li><form action="./logout" method="POST">
+                <button class="login-button">LOGOUT</button>
+              </form></li>
+                <!-- <li><button class="join-button" href="#">Join</button></li> -->
+        </ul>
+    </nav>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">
+        <span class="material-symbols-outlined">arrow_upward</span>
+    </button>
+
+    <section>
+
+        <div class="blogs">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="./images/blogs/blog-0.jpg" alt="blog-2-1" height="330" width="370" id="remove-img" style="margin-top: 20px;">
+                    <div class="img-caption">Cosmonaut Oleg Kononenko inspects the Soyuz MS-09 spacecraft during a spacewalk on Dec. 11, 2018.</div>
+                </div>
+                <div class="col-md-8">
+                    <div class="blog-heading">Biomedical Research, Spacewalk Preps Wrap Week on Station</div>
+                    <div class="blog-date">19 April 2024</div>
+                    In the blog post dated April 19, 2024, I provided updates on the activities aboard the International Space Station (ISS) as we wrapped up the week. Our focus was on biomedical research and preparations for upcoming spacewalks. I participated in various biomedical experiments aimed at understanding the effects of spaceflight on the human body, contributing valuable data to ongoing research efforts. Additionally, we conducted final preparations for upcoming spacewalks, ensuring that equipment and procedures were in place for successful missions outside the station. These activities reflect our commitment to advancing scientific knowledge and maintaining the operational capabilities of the ISS. As we conclude the week, I am proud of our accomplishments and look forward to continuing our work in space exploration. <br>
+                    Read more <a href="https://blogs.nasa.gov/spacestation/2024/04/19/biomedical-research-spacewalk-preps-wrap-week-on-station-2/" target="_blank">here</a> 
+                </div>
+            </div>
+        </div>
+
+        <div class="blogs">
+            <div class="row">
+                <div class="col-md-4">
+                    <iframe width="371" height="370" src="https://www.youtube.com/embed/9UwJFWCLzS4" title="Stunning View of Lyrids and Earth at Night" frameborder="0" allow="accelerometer; autoplay; encrypted-media; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen ></iframe>
+                    <div class="img-caption">Lyrids Meteor shower</div>
+                </div>
+                <div class="col-md-8">
+                    <div class="blog-heading">Enjoy the Warming Weather Under These 3 Upcoming Meteor Showers</div>
+                    <div class="blog-date">18 April 2024</div>
+                    Get ready for some spectacular skywatching as meteor showers take center stage in the upcoming months. The Lyrid meteor shower, peaking overnight on April 21-22, may be slightly overshadowed by the bright waxing gibbous Moon, but dedicated observers can still catch a glimpse of this ancient shower, which has been observed for over 2,700 years. <br>
+
+                    In early May, the Eta Aquarids meteor shower is expected to put on a dazzling display, known for its fast-moving meteors that leave glowing trails behind them. This year is predicted to be an outburst year, especially in the Southern Hemisphere, with up to one meteor per minute visible. The waning crescent Moon during its peak on May 4-5 means minimal interference from moonlight. <br>
+
+                    Mark your calendars for the Perseid meteor shower in mid-August, described as a "stunner" by experts. With no moonlight to detract from the show, viewers can expect to see about 50 to 100 meteors per hour during its peak on August 12-13. The Perseids are also famous for their fireballs, adding to the excitement of this celestial event. <br>
+                    Read more <a href="https://blogs.nasa.gov/Watch_the_Skies/2024/04/18/enjoy-the-warming-weather-under-these-3-upcoming-meteor-showers/" target="_blank">here</a> 
+                </div>
+            </div>
+        </div>
+
+        <div class="blogs">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="./images/blogs/blog-2-1.jpg" alt="blog-2-1" height="330" width="370" id="remove-img" style="margin-top: 20px;">
+                    <div class="img-caption">NASA's Webb Makes the Distant Universe Dream Come True</div>
+                </div>
+                <div class="col-md-8">
+                    <div class="blog-heading">Advanced Research and Ongoing Spacewalk Preps Pack Schedule</div>
+                    <div class="blog-date">18 April 2024</div>
+                    The Expedition 71 crew aboard the International Space Station had a busy day with various research activities and spacewalk preparations. NASA astronauts and Roscosmos cosmonauts split their time between servicing hardware, conducting space biology experiments, and preparing for upcoming spacewalks. Investigations ranged from studying thermophysical properties of materials to analyzing microbial resistance to antibiotics. Crew members also tested portable breathing gear and conducted fitness evaluations ahead of an upcoming spacewalk on April 25. The day ended with preparations for the departure of the SpaceX Dragon spacecraft, scheduled for April 26. <br>
+                    Read more <a href="https://blogs.nasa.gov/spacestation/2024/04/18/advanced-research-and-ongoing-spacewalk-preps-pack-schedule/" target="_blank">here</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="blogs">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="./images/blogs/blog-3-1.jpg" alt="blog-3-1" height="330" width="370">
+                    <div class="img-caption">Image from Nasa's James Web Telescope</div>
+                </div>
+                <div class="col-md-8">
+                    <div class="blog-heading">NASA's Webb Makes the Distant Universe Dream Come True</div>
+                    <div class="blog-date">18 April 2024</div>
+                    NASA's James Webb Space Telescope has realized astronomers' dreams by capturing images of the distant universe, showcasing galaxies formed shortly after the Big Bang. With its advanced infrared technology, Webb has unveiled the universe's infancy, revealing insights into cosmic evolution, galaxy diversity, and the processes shaping their development. Notably, Webb's observations have detected galaxies at various evolutionary stages, supporting theoretical models and refining our understanding of cosmic history. These findings pave the way for deeper exploration of the universe's early epochs, offering unprecedented detail and inspiring further research into cosmic phenomena. As Webb continues its mission, astronomers anticipate additional discoveries that will reshape our understanding of the universe and inspire future generations. <br>
+                    Read more <a href="https://blogs.nasa.gov/webb/2024/04/18/nasas-webb-makes-the-distant-universe-dream-come-true/" target="_blank">here</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="blogs">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="./images/blogs/blog-2-3.jpg" alt="blog-3-1" height="330" width="370">
+                </div>
+                <div class="col-md-8">
+                    <div class="blog-heading">ISS Daily Summary Report</div>
+                    <div class="blog-date">17 April 2024</div>
+                    I   n the ISS Daily Summary Report for April 17, 2024, our crew embarked on a day filled with diverse tasks and scientific endeavors aboard the International Space Station. Our activities ranged from conducting maintenance tasks to advancing scientific research across various fields. We diligently performed experiments in space biology, biomedical studies, and life support systems, contributing valuable data to ongoing research efforts. Additionally, we prepared for upcoming spacewalks, managed cargo operations, and ensured the station's operational efficiency through maintenance tasks. Our dedication to these tasks underscores our commitment to maintaining the station's operations and furthering scientific exploration in the unique microgravity environment of space. <br>
+                    Read more <a href="https://blogs.nasa.gov/stationreport/2024/04/17/iss-daily-summary-report-4-17-2024/" target="_blank">here</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="blogs">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="./images/blogs/blog-5-1.jpg" alt="blog-3-1" height="330" width="370">
+                    <div class="img-caption">Astronaut MIke Barratt installs a small satellite orbital deployer inside the Kibo laboratory module's airlock.</div>
+                </div>
+                <div class="col-md-8">
+                    <div class="blog-heading">Crew Works Cargo, Biomedical Ops, and Spacewalk Preps</div>
+                    <div class="blog-date">17 April 2024</div>
+                    In the blog post dated April 17, 2024, I detailed our crew's activities aboard the International Space Station (ISS). Our day was filled with tasks ranging from unloading cargo from visiting spacecraft to conducting biomedical experiments and preparing for upcoming spacewalks. We diligently managed cargo operations, ensuring the delivery of essential supplies and equipment for our mission. Additionally, we conducted vital biomedical research, contributing to our understanding of human health in space. Preparations for spacewalks were also a priority as we readied equipment and reviewed procedures to ensure the success of these critical missions. Our commitment to efficiently managing station operations and advancing scientific research reflects our dedication to our mission aboard the ISS. <br>
+                    Read more <a href="https://blogs.nasa.gov/spacestation/2024/04/17/crew-works-cargo-biomedical-ops-and-spacewalk-preps/" target="_blank">here</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="blogs">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="./images/blogs/blog-6-1.jpg" alt="blog-3-1" height="330" width="370">
+                    <div class="img-caption">Boeing's Starliner spacecraft</div>
+                </div>
+                <div class="col-md-8">
+                    <div class="blog-heading">NASA's Boeing Crew Flight Test Begins Stacking Operations</div>
+                    <div class="blog-date">16 April 2024</div>
+                    In the blog post dated April 16, 2024, I shared updates on NASA's Boeing Crew Flight Test as stacking operations commenced. The post highlighted the significant milestone of assembling components for the crew flight test vehicle, marking a crucial step forward in the spacecraft's development. As part of the crew, I observed the stacking operations, witnessing the integration of key elements that will enable future crewed missions. This milestone represents progress towards achieving NASA's goals of enhancing space exploration capabilities and facilitating crewed missions to the International Space Station and beyond. The successful stacking operations underscore the collaborative efforts between NASA and Boeing in advancing space exploration technology and preparing for the next phase of crewed spaceflight.<br>
+                    Read more <a href="https://blogs.nasa.gov/boeing-crew-flight-test/2024/04/16/nasas-boeing-crew-flight-test-begins-stacking-operations/" target="_blank">here</a>
+                </div>
+            </div>
+        </div>
+
+
+        
+ 
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+          <div class="footer-row">
+            <div class="footer-col">
+              <ul>
+                <a href="#" id="" class="logo"><img src="./images/space-logo-removebg-preview.png" alt="cosmo-logo"></a>
+                <li><a href="#" id="">Discover fascinating insights and updates on space exploration and celestial phenomena.</a></li>
+                <li><a href="#" id="">Something</a></li>
+              </ul>
+            </div>
+            
+            <div class="footer-col">
+              <ul>
+                <li><a href="#" id="">Home</a></li>
+                <li><a href="#" id="">News and Events</a></li>
+                <li><a href="#" id="">Multimedia</a></li>
+                <li><a href="#" id="">Missions</a></li>
+                <li><a href="#" id="">History of Space</a></li>
+              </ul>
+            </div>
+            
+            <div class="footer-col">
+              <ul>
+                <li><a href="#" id="">Home</a></li>
+                <li><a href="#" id="">News and Events</a></li>
+                <li><a href="#" id="">Multimedia</a></li>
+                <li><a href="#" id="">Missions</a></li>
+                <li><a href="#" id="">History of Space</a></li>
+              </ul>
+            </div>
+            
+                <div class="footer-col">
+                  <ul>
+                    <li><a href="#" id="">Home</a></li>
+                    <li><a href="#" id="">News and Events</a></li>
+                    <li><a href="#" id="">Multimedia</a></li>
+                    <li><a href="#" id="">Missions</a></li>
+                    <li><a href="#" id="">History of Space</a></li>
+                  </ul>
+                </div>
+                
+                <div class="footer-col social-links">
+                  <ul>
+                    <li><a href="#" id="">Follow</a></li>
+                    <li><a href="#" id="">Social media handles</a></li>
+                    <li><a href="#" id="">More about us</a></li>
+                    <li><a href="#" id="">Newsletter</a></li>
+                  </ul>
+                </div>
+                
+              </div>
+            </div>
+          </footer>
+
+        
+    <script src="js/header.js"></script>
+    <script src="js/top-scroll.js"></script>
+</body>
+</html>

@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rockets | Cosmic Chronicles</title>
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/header.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            letter-spacing: 1px;
+            font-weight: 300;
+        }
+
+        html{
+            scroll-behavior:smooth;
+        }
+
+        body{
+            /* background-color: #2d2d2d; */
+            background-color: #1f1f1f;
+            font-family: sans-serif;
+            color: white;
+        }
+        .container{
+            width: 1460px;
+            max-width: 90%;
+            margin: 0 auto;
+        }
+
+        section.rocket{
+            display: grid;
+            grid-template-columns: 1fr 100px 1fr;
+            grid-gap: 80px;
+            padding: 100px 0;
+        }
+
+        section.rocket .rocket-body{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+        }
+
+        section.rocket .rocket-body span{
+            font-size: 0;
+            position: relative;
+        }
+
+        section.rocket .rocket-body span img{
+            width: 100%;
+        }
+
+        section.rocket .block{
+            width: 70%;
+        }
+
+        section.rocket .block h1{
+            font-size: 32px;
+            font-weight: 400;
+        }   
+
+        section.rocket .block .highlight{
+            position: relative;
+            margin-bottom: 38px;
+        }
+
+        section.rocket .block .highlight:before{
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -12px;
+            display: block;
+            width: 38%;
+            height: 2px;
+            background: white;
+        }
+
+        section.rocket .block h1.highlight:before{
+            width: 20%;
+        }
+
+        section.rocket p{
+            line-height: 1.6;
+
+        }
+
+        section.rocket .block h2{
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+
+        section.rocket .block.payload{
+            padding-top: 130px;
+            
+        }
+
+        section.rocket .block.payload h2{
+            padding-left: 80px;
+
+        }
+
+        section.rocket .block.dragon{
+            padding-top: 120px;
+        }
+
+        section.rocket .block.composite{
+            padding-top: 120px;
+        }
+
+        section.rocket .block.first-stage{
+            padding-top: 120px;
+        }
+
+        section.rocket .block.capacity{
+            display: flex;
+            align-items: center;
+            padding-top: 140px;
+            margin-bottom: -60px;
+        }
+
+        section.rocket .block.capacity > div:first-child{
+            margin-right: 40px;
+        }
+
+        section.rocket .block.capacity h4{
+            font-size: 12px;
+            font-weight: 400;
+            margin-bottom: 10px;
+        }
+
+        section.rocket .block.capacity h6{
+            font-size: 40px;
+            font-weight: 400;
+            margin-top: 20px;
+        }
+
+        section.rocket .block.capacity h6 small{
+            font-size: 12px;
+        }
+
+        section.rocket .block.second-stage{
+            padding-top: 60px;
+        }
+
+        section.rocket .right-block.block.capacity{
+            padding-top: 120px;
+        }
+
+        section.rocket .right-block.block.single{
+            padding-top: 40px;
+        }
+
+        section.rocket .right-block .block.engines{
+            display: flex;
+            justify-content: center;
+            padding-top: 70px;
+        }
+
+        section.rocket .right-block .block.engines img{
+            width: 180px;
+        }
+
+        section.rocket .right-block .block.marine {
+            padding-top: 70px;
+            width: 70%;
+
+        }
+
+        section.rocket .right-block .block.marine h2{
+            font-size: 14px;
+            padding-left: 100px;
+            margin-bottom: 26px;
+        }
+
+        section.rocket .right-block .floating-graphics{
+            position: sticky;
+            float: right;
+            top: 120px;
+            margin-right: -60px;
+        }
+
+        section.rocket .right-block .floating-graphics img{
+            height: 350px;
+        }
+
+        section.rocket .rocket-body span:after, section.rocket .rocket-body span:nth-child(3):before{
+            content: '';
+            display: block;
+            position: absolute;
+            height: 2px;
+            background: white;
+            width: 0;
+            transition: width 1s ease-in-out;
+        }
+
+        section.rocket .rocket-body span:nth-child(1):after{
+            bottom: 16px;
+            left: 96%;
+        }
+
+        section.rocket .rocket-body span:nth-child(2):after{
+            bottom: 62%;
+            right: 100%;
+        }
+
+        section.rocket .rocket-body span:nth-child(3):after{
+            bottom: 64%;
+            right: 90%;
+        }
+
+        section.rocket .rocket-body span:nth-child(3):before{
+            bottom: 44%;
+            left: 90%;
+        }
+
+        section.rocket .rocket-body span.active:nth-child(1):after{
+            width: 120px;
+        }
+        section.rocket .rocket-body span.active:nth-child(2):after{
+            width: 180px;
+        }
+        section.rocket .rocket-body span.active:nth-child(3):after{
+            width: 200px;
+        }
+        section.rocket .rocket-body span.active:nth-child(3):before{
+            width: 160px;
+        }
+
+        @keyframes jump{
+            50%{
+                transform: translateY(-50px);
+            }
+        }
+        section.rocket .rocket-body span.active:nth-child(1){
+            animation: jump 1s ease-in-out forwards;
+        }
+
+        .hero-info{
+            margin-top: 90px;
+            /* margin-top: 100px; */
+            width: 97.3%;
+            background-color: rgb(18, 18, 18);
+            padding: 60px 20px 90px 20px;
+            line-height: 1.5rem;
+            font-size: medium;
+            /* padding-left: 20px; */
+        }
+
+        .hero-info .hero-head{
+            width: max-content;
+            letter-spacing: 1.5px;
+            padding-left: 20px;
+            padding-top: 30px;
+            padding-bottom: 20px;
+        }
+
+        .hero-info .hero-desc{
+            width: 90%;
+            padding-left: 20px;
+        }
+
+        .table-head{
+            width: max-content;
+            padding-left: 20px;
+            text-align: left;
+            padding-right: 90px;
+            padding-bottom: 20px;
+        }
+
+        .rocket-body-atlas span img{
+            height: 1500px;
+            margin-left: -120px;
+        }
+
+        section.rocket .right-block .block.atlasV-engine img{
+            padding-top: 100px;
+            width: 500px;
+        }
+
+        .pslv-rocket-body span img{
+            height: 1500px;
+            margin-left: -120px;
+        }
+
+        section.rocket .right-block .block.pslv-size img{
+            height: 800px;
+            width: 580px;
+            /* margin-left: -20px; */
+            padding-top: 40px;
+            margin-bottom: -100px;
+            /* mix-blend-mode: multiply; */
+            mix-blend-mode: overlay;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- ====== NAVBAR ====== -->
+    <nav>
+        <div class="logo">
+            <a href="/"><img src="./images/space-logo-removebg-preview.png" alt="Cosmo-logo"></a>
+        </div>
+        <div class="hamburger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+        <ul class="navbar-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="./solar-system-explore">Explore Space</a></li>
+            <li><a href="./cosmic-blast">Games</a></li>
+            <li><a href="" class="active">Rockets</a></li>
+            <li><a href="./blogs">Blogs</a></li>
+            <li><form action="./logout" method="POST">
+                <button class="login-button">LOGOUT</button>
+              </form></li>
+             <!-- <li><button class="join-button" href="#">Join</button></li> -->
+        </ul>
+    </nav>
+        
+    <button onclick="topFunction()" id="myBtn" title="Go to top">
+        <span class="material-symbols-outlined">arrow_upward</span>
+    </button>
+
+        <!-- ====== PSLV ====== -->
+        
+        <div class="hero-info">
+            <h1 class="hero-head">PSLV</h1>
+            <p class="hero-desc">
+                Polar Satellite Launch Vehicle (PSLV) is the third generation launch vehicle of India. It is the first Indian launch vehicle to be equipped with liquid stages. After its first successful launch in October 1994, PSLV emerged as a reliable and versatile workhorse launch vehicle of India. The vehicle has launched numerous Indian and foreign customer satellites. Besides, the vehicle successfully launched two spacecraft "Chandrayaan-1 in 2008 and Mars Orbiter Spacecraft in 2013"that later travelled to Moon and Mars respectively. Chandrayaan-1 and MOM were feathers in the hat of PSLV. The launch of PSLV-C48 marks the 50th Launch of PSLV. Besides, the vehicle successfully launched two spacecraft " Chandrayaan-1 in 2008 and Mars Orbiter Spacecraft in 2013"that later traveled to Moon and Mars respectively. 
+                <table>
+                    <h3 class="hero-head">Overview</h3>
+                    <tr>
+                        <th class="table-head">Height</th>
+                        <td>44.4m</td>
+                    </tr>
+                    <tr>
+                        <th class="table-head">Diameter</th>
+                        <td>2.8m</td>
+                    </tr>
+                    <tr>
+                        <th class="table-head">Variants</th>
+                        <td> 4 (PSLV,CA,DL,QL,XL)</td>
+                    </tr>
+                    <tr>
+                        <th class="table-head">Lift Off Mass</th>
+                        <td>320 tonnes (XL)</td>
+                    </tr>
+                    <tr>
+                        <th class="table-head">First Flight</th>
+                        <td>September 20, 1993</td>
+            </tr>
+        </table>
+    </p>
+</div>
+
+<section class="rocket container">
+    <div class="left-block">
+        <div class="block">
+            <h1 class="highlight">PSLV</h1>
+            <p>PSLV is a highly reliable and versatile rocket renowned for its cost-effective deployment of satellites into polar and geosynchronous orbits, contributing significantly to India's space exploration and satellite deployment efforts.</p>
+        </div>
+        <div class="block dragon">
+            <h2 class="highlight">First Stage: PS1</h2>
+            <p>PSLV uses the S139 solid rocket motor that is augmented by 6 solid strap-on boosters.</p>
+        </div>
+        <div class="block composite">
+            <h2 class="highlight">Second Stage: PS2</h2>
+            <p>PSLV uses an Earth storable liquid rocket engine for its second stage, know as the Vikas engine, developed by Liquid Propulsion Systems Centre.</p>
+            </div>
+            <div class="block first-stage">
+                <h2 class="highlight">Third Stage: PS3</h2>
+                <p>The third stage of PSLV is a solid rocket motor that provides the upper stages high thrust after the atmospheric phase of the launch.</p>
+            </div>
+            <div class="block capacity">
+                <div>
+                    <h2 class="highlight">Motor</h2>
+                    <h6>S7</h6>
+                </div>
+                <div>
+                    <h2 class="highlight">Max Thrust</h2>
+                    <h6>240 <small>kN</small></h6>
+                </div>
+            </div>
+            <div class="block capacity">
+                <div>
+                    <h2 class="highlight">Fuel</h2>
+                    <h6>Hydroxyl-terminated polybutadiene (HTPB)</h6>
+                </div>
+            </div>
+        </div>
+        
+        <div class="pslv-rocket-body">
+            <span class="first"><img src="./images/pslv-removebg-preview.png" alt="img1"></span>
+        </div>
+        <div class="right-block">
+            <!-- <div class="floating-graphics">
+                <img src="/images/pslv-size-removebg-preview.png" alt="">
+            </div> -->
+            <div class="block payload">
+                <h2>Payload to Sub GTO: 1,425 kg</h2>
+                <p>Due to its unmatched reliability, PSLV has also been used to launch various satellites into Geosynchronous and Geostationary orbits, like satellites from the IRNSS constellation.</p>
+            </div>
+            <div class="block second-stage">
+                <h2 class="highlight">Fourth Stage: PS4</h2>
+                <p>The PS4 is the uppermost stage of PSLV, comprising of two Earth storable liquid engines.</p>
+            </div>
+            <div class="block pslv-size">
+                <img src="./images/pslv-size-removebg-preview.png" alt="engine">
+            </div>
+            <div class="block marine">
+                <h1 class="highlight">Strap-on Motors</h1>
+                <p>PSLV uses 6,4,2 solid rocket strap-on motors to augment the thrust provided by the first stage in PSLV-XL, QL & DL variants respectively. However, strap-ons are not used in the core alone version (PSLV-CA).
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    
+    <!-- ====== FALCON9 ====== -->
+    
+    <div class="hero-info">
+        <h1 class="hero-head">Falcon9</h1>
+        <p class="hero-desc">
+            Falcon 9 is a reusable, two-stage rocket designed and manufactured by SpaceX for the reliable and safe transport of people and payloads into Earth orbit and beyond. Falcon 9 is the world's first orbital class reusable rocket. Reusability allows SpaceX to refly the most expensive parts of the rocket, which in turn drives down the cost of space access. Falcon 9 made history in 2012 when it delivered Dragon into the correct orbit for rendezvous with the International Space Station, making SpaceX the first commercial company ever to visit the station. Since then Falcon 9 has made numerous trips to space, delivering satellites to orbit as well as delivering and returning cargo from the space station for NASA. Falcon 9, along with the Dragon spacecraft, was designed from the outset to deliver humans into space and under an agreement with NASA, SpaceX is actively working toward this goal. 
+            <table>
+                <h3 class="hero-head">Overview</h3>
+                <tr>
+                    <th class="table-head">Height</th>
+                    <td>70m / 229.6 ft</td>
+                </tr>
+                <tr>
+                    <th class="table-head">Diameter</th>
+                    <td>3.7m / 12ft</td>
+                </tr>
+                <tr>
+                    <th class="table-head">Mass</th>
+                    <td>549,054kg / 1,207,920 lb</td>
+                </tr>
+                <tr>
+                    <th class="table-head">Payload to Mars</th>
+                    <td>4,020kg / 8,860lb</td>
+                </tr>
+            </table>
+        </p>
+    </div>
+    
+    <section class="rocket container">
+        <div class="left-block">
+            <div class="block">
+                <h1 class="highlight">Falcon9</h1>
+            <p>Falcon9 is a two-stage rocket designed and manufactured by SpaceX for the reliable and safe transport of satellites and the dragon spacecraft into orbit.</p>
+        </div>
+        <div class="block dragon">
+            <h2 class="highlight">Dragon Spacecraft</h2>
+            <p>Dragon carries cargo in the spacecraft's pressurized capsule and unpressurized trunk, which can also
+                accommodate secondary payloads. In the future, Dragon will carry astronauts in the pressurized
+                capsule as well.</p>
+            </div>
+            <div class="block composite">
+                <h2 class="highlight">COMPOSITE FAIRING</h2>
+                <p>The payload fairing is for the delivery of satellites to destinations in low Earth orbit (LEO),
+                    geosynchronous transfer orbit (GTO) and beyond.</p>
+                </div>
+                <div class="block first-stage">
+                    <h2 class="highlight">FIRST STAGE</h2>
+                    <p>Falcon 9's first stage incorporates nine Merlin engines and aluminum-lithium alloy tanks containing
+                        liquid oxygen and rocket-grade kerosene (RP-1) propellant.</p>
+                    </div>
+                    <div class="block capacity">
+                        <div>
+                            <h4 class="highlight">ENGINE</h4>
+                            <h6>9</h6>
+                        </div>
+                        <div>
+                            <h4 class="highlight">BURNTIME</h4>
+                            <h6>162 <small>SEC</small></h6>
+                        </div>
+                    </div>
+                    <div class="block capacity">
+                        <div>
+                            <h4 class="highlight">Thrust At Sea Level</h4>
+                            <h6>7,607kN1</h6>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="rocket-body">
+                    <span class="first"><img src="./images/rocket1.png" alt="img1"></span>
+                    <span class="second"><img src="./images/rocket2.png" alt="img2"></span>
+                    <span class="third"><img src="./images/rocket3.png" alt="img3"></span>
+                </div>
+        <div class="right-block">
+            <div class="floating-graphics">
+                <img src="./images/bus.png" alt="">
+            </div>
+            <div class="block payload">
+                <h2>Payload</h2>
+                <p>Falcon 9 delivers payloads to space aboard the Dragon spacecraft or inside a composite fairing.</p>
+            </div>
+            <div class="block second-stage">
+                <h2 class="highlight">SECOND STAGE</h2>
+                <p>The second stage, powered by a single Merlin vacuum engine, delivers Falcon 9’s payload to the
+                    desired orbit. For maximum reliability, the second stage has redundant igniter systems.</p>
+                </div>
+                <div class="block capacity">
+                    <div>
+                        <h4 class="highlight">ENGINE</h4>
+                        <h6>1</h6>
+                    </div>
+                    <div>
+                        <h4 class="highlight">BURNTIME</h4>
+                        <h6>397 <small>SEC</small></h6>
+                    </div>
+            </div>
+            <div class="block capacity single">
+                <div>
+                    <h4 class="highlight">Thrust At Sea Level</h4>
+                    <h6>934kN210</h6>
+                </div>
+            </div>
+            <div class="block engines">
+                <img src="./images/engines.png" alt="engine">
+            </div>
+            <div class="block marine">
+                <h2>NINE MARLINE ENGINES</h2>
+                <p>With its nine first-stage Merlin engines clustered together, Falcon 9 can sustain up to two engine
+                    shutdowns during flight and still successfully complete its mission. Falcon 9 is the only launch
+                    vehicle in its class with this key reliability feature.
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    
+    <!-- ====== ATLASV ====== -->
+    
+    <div class="hero-info">
+        <h1 class="hero-head">AtlasV</h1>
+        <p class="hero-desc">
+            <!-- Atlas V is an expendable launch vehicle most commonly used for launching satellites into geosynchronous orbit. Atlas V is operated by United Launch Alliance (ULA), a joint venture between Lockheed Martin and Boeing. Atlas V is a member of the Atlas family of rockets, which originated with the intercontinental ballistic missile (ICBM) developed in the late 1950s. It was later adapted into a space launch vehicle. Atlas V is the most powerful member of the Atlas family, and is one of the most reliable launch vehicles in the world.  -->
+            The Atlas V rocket, born from the Atlas intercontinental ballistic missile program of the 1950s, has evolved into a pinnacle of reliability and adaptability in space launch technology. Operated by United Launch Alliance (ULA), a partnership between Lockheed Martin and Boeing, the Atlas V is renowned for its track record of successful launches and its ability to cater to a wide range of mission requirements. Equipped with a modular design, the Atlas V can be tailored to suit various payload sizes and mission profiles, whether launching satellites into geosynchronous orbit or facilitating interplanetary exploration. Its propulsion system, typically featuring the Russian-built RD-180 engine in the first stage, ensures efficient and precise delivery of payloads. Backed by rigorous quality assurance protocols and meticulous mission planning, ULA's commitment to safety and reliability underpins every Atlas V launch. This dedication has earned the rocket a reputation as one of the most dependable launch vehicles in the world. As space exploration ventures expand and evolve, the Atlas V remains a cornerstone of these endeavors, poised to continue its legacy of excellence in enabling scientific discovery and technological advancement beyond Earth's atmosphere.
+            <!--         <table>
+                <h3 class="hero-head">Overview</h3>
+                <tr>
+                    <th class="table-head">Height</th>
+                    <td>70m / 229.6 ft</td>
+                </tr>
+                <tr>
+                    <th class="table-head">Diameter</th>
+                    <td>3.7m / 12ft</td>
+                </tr>
+                <tr>
+                    <th class="table-head">Mass</th>
+                    <td>549,054kg / 1,207,920 lb</td>
+                </tr>
+                <tr>
+                    <th class="table-head">Payload to Mars</th>
+                    <td>4,020kg / 8,860lb</td>
+                </tr>
+            </table> -->
+        </p>
+        
+    </div>
+    
+    <section class="rocket container">
+        <div class="left-block">
+            <div class="block">
+                <h1 class="highlight">AtlasV</h1>
+                <p>The Atlas V rocket, standing as a symbol of reliability and adaptability in space launch technology, is operated by United Launch Alliance (ULA) and renowned for its versatility in delivering payloads to a variety of orbits, including geosynchronous orbit and interplanetary destinations such as Mars. </p>
+            </div>
+            <div class="block dragon">
+                <h2 class="highlight">Main Engine</h2>
+                <p>Delivering more than 860,000 pounds of thrust at liftoff and an impressive range of continuous throttling capability, the RD-180 main engine is a powerful combination of innovation and performance. Designed and manufactured by NPO Energomash, the liquid oxygen/liquid kerosene, two-thrust-chamber RD-180 engine is a complete propulsion unit equipped with hydraulics for control valve actuation and thrust vector gimbaling, pneumatics for valve actuation and system purging, and a thrust frame to distribute loads.</p>
+            </div>
+            <div class="block composite">
+                <h2 class="highlight">Solid Rocket Boosters</h2>
+                <p>When missions demand additional thrust at liftoff, Atlas integrates up to three Aerojet Rocketdyne solid rocket boosters (SRBs) on the Atlas V 400 series launch vehicle and up to five SRBs on the Atlas V 500 series vehicles.</p>
+            </div>
+            <!-- <div class="block first-stage">
+                <h2 class="highlight">FIRST STAGE</h2>
+                <p>Falcon 9's first stage incorporates nine Merlin engines and aluminum-lithium alloy tanks containing
+                    liquid oxygen and rocket-grade kerosene (RP-1) propellant.</p>
+                </div> -->
+                <div class="block capacity">
+                    <div>
+                    <h4 class="highlight">Fuel/Oxidizer</h4>
+                    <h6>Liquid Oxygen</h6>
+                </div>
+                <div>
+                    <h4 class="highlight">Burn Time</h4>
+                    <h6>88.3<small>sec</small></h6>
+                </div>
+            </div>
+            <div class="block capacity">
+                <div>
+                    <h4 class="highlight">Peak Vacuum Thrust</h4>
+                    <h6>380,000 lbs</h6>
+                </div>
+            </div>
+        </div>
+
+        <div class="rocket-body-atlas">
+            <span class="first"><img src="./images/Atlas_401-removebg-preview.png" alt="img1"></span>
+            <!-- <span class="second"><img src="/images/atlas2.png" alt="img2"></span>
+                <span class="third"><img src="/images/atlas3.png" alt="img3"></span> -->
+            </div>
+            <div class="right-block">
+                <div class="block payload">
+                    <h2>PAYLOAD FAIRINGS</h2>
+                    <p>The payload fairing (PLF) provides a controlled, safe environment for spacecraft during ascent. All ULA PLFs are configured for off-pad payload encapsulation to enhance payload safety and security and minimize on-pad time.</p>
+                </div>
+                <div class="block second-stage">
+                    <h2 class="highlight">Upper Stage</h2>
+                    <p>The Atlas V Centaur upper stage is powered by the RL10C and can be configured with either one or two engines.</p>
+            </div>
+            <div class="block capacity">
+                <div>
+                    <h4 class="highlight">Nominal Thrust</h4>
+                    <h6>22,900 lbs</h6>
+                </div>
+                <div>
+                    <h4 class="highlight">Fuel/Oxidizer</h4>
+                    <h6>Liquid Hydrogen</h6>
+                </div>
+            </div>
+            <div class="block capacity single">
+                <div>
+                    <h4 class="highlight">Thrust At Sea Level</h4>
+                    <h6>860,300lbs</h6>
+                </div>
+            </div>
+            <div class="block atlasV-engine">
+                <img src="./images/atlasv_engine.jpg" alt="engine">
+            </div>
+            <!-- <div class="block marine">
+                <h2>NINE MARLINE ENGINES</h2>
+                <p>With its nine first-stage Merlin engines clustered together, Falcon 9 can sustain up to two engine
+                    shutdowns during flight and still successfully complete its mission. Falcon 9 is the only launch
+                    vehicle in its class with this key reliability feature.
+                </p>
+            </div> -->
+        </div>
+    </section>
+
+    
+    <!-- ====== FOOTER ====== -->
+    
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-row">
+                <div class="footer-col">
+                    <ul>
+                        <a href="#" id="" class="logo"><img src="./images/space-logo-removebg-preview.png" alt="cosmo-logo"></a>
+                        <li><a href="#" id="">Description</a></li>
+                        <li><a href="#" id="">Something</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <ul>
+                        <li><a href="#" id="">Home</a></li>
+                        <li><a href="#" id="">News and Events</a></li>
+                        <li><a href="#" id="">Multimedia</a></li>
+                        <li><a href="#" id="">Missions</a></li>
+                        <li><a href="#" id="">History of Space</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <ul>
+                        <li><a href="#" id="">Home</a></li>
+                        <li><a href="#" id="">News and Events</a></li>
+                        <li><a href="#" id="">Multimedia</a></li>
+                        <li><a href="#" id="">Missions</a></li>
+                        <li><a href="#" id="">History of Space</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+
+                    <ul>
+                <li><a href="#" id="">Home</a></li>
+                <li><a href="#" id="">News and Events</a></li>
+                <li><a href="#" id="">Multimedia</a></li>
+                <li><a href="#" id="">Missions</a></li>
+                <li><a href="#" id="">History of Space</a></li>
+            </ul>
+            </div>
+            
+            <div class="footer-col social-links">
+                <ul>
+                    <li><a href="#" id="">Follow</a></li>
+                    <li><a href="#" id="">Social media handles</a></li>
+                    <li><a href="#" id="">More about us</a></li>
+                    <li><a href="#" id="">Newsletter</a></li>
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+</footer>
+<script src="js/header.js"></script>
+<script src="js/top-scroll.js"></script>
+
+
+<!-- ====== SCRIPT ====== -->
+    <!-- <script>
+        console.log("in script");
+        let rocketPieces = document.querySelectorAll('.rocket-body span');
+        let rocket = document.querySelector('.rocket');
+        
+        let triggerStart = window.innerHeight / 4;
+        let rocketOffsetTop = rocket.offsetTop;
+        let thirdOffsetTop = rocketPieces[2].offsetTop;
+        
+        document.addEventListener('scroll', (e) => {
+            if(window.scrollY > (rocketOffsetTop - triggerStart)){
+                console.log("applies");
+                rocketPieces[0].classList.add('active');
+                rocketPieces[1].classList.add('active');
+            }
+            else{
+                rocketPieces[0].classList.remove('active');
+                rocketPieces[1].classList.remove('active');
+            }
+            
+                if(window.scrollY > (thirdOffsetTop - triggerStart)){
+                    rocketPieces[2].classList.add('active');
+                    // rocketPieces[3].classList.add('active');
+                }
+                else{
+                    rocketPieces[2].classList.remove('active');
+                    // rocketPieces[3].classList.remove('active');
+                }
+            } );
+    </script> -->
+</body>
+</html>
