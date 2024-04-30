@@ -11,8 +11,9 @@ app.use(express.static('./'));
 const UserModel = require('./js/users');
 const newsModel = require('./js/newsletter');
 
-const mongoURI = 'mongodb://localhost:27017/sessions';
-
+// const mongoURI = 'mongodb://localhost:27017/sessions';
+const mongoURI = process.env.MONGO_URL;
+const PORT = process.env.PORT || 2000;
 mongoose.connect(mongoURI).then((res) => {
     console.log("mongoDB Connected");
 });
@@ -111,7 +112,7 @@ const myRouterApp = require('./router');
 
 app.use(myRouterApp);
 
-app.listen(2000, () => {
+app.listen(PORT, () => {
     console.log('Server is running on http://localhost:2000');
 });
 
