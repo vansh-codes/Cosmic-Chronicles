@@ -3,9 +3,194 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Stars | Cosmic Chronicles</title>
+    <link rel="icon" type="image/x-icon" href="../images/space-logo-64-cropped.ico" sizes="64x64">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/theories.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
-    <h1>In production</h1>
+    <nav style="top: 100px;">
+        <div class="logo">
+            <a href="/"><img src="../images/space-logo-removebg-preview.png" alt="Cosmo-logo"></a>
+        </div>
+        <div class="hamburger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+          </div>
+          <ul class="navbar-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="../solar-system-explore">Explore Space</a></li> 
+            <li><a href="../cosmic-blast">Games</a></li>
+            <li><a href="../rockets">Rockets</a></li>
+            <li><a href="../blogs">Blogs</a></li>
+            <li><form action="./logout" method="POST">
+              <button class="login-button">LOGOUT</button>
+            </form></li>
+          </ul>
+        </nav>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">
+        <span class="material-symbols-outlined">arrow_upward</span>
+    </button>
+
+  <section>
+    <div class="row">
+      <div class="theory-section">
+        <div class="col-md-3">
+          <div class="table-content">
+              <h3>Contents</h3>
+              <ul>
+                  <li><a href="#the-beginning">The Beginning</a></li>
+                  <li><a href="#birth">Birth</a></li>
+                  <li><a href="#life">Life</a></li>
+                  <li><a href="#death">Death</a></li>
+              </ul>
+          </div>
+        </div>
+        <div class="col-md-9">
+          <div class="theory-container">
+              <div class="theory-heading" id="the-beginning">The Beginning</div>
+              <div class="theory-content">
+                Our universe is filled with a mind-boggling number of stars. Scientists estimate there could be up to one septillion stars out there, which is a whopping number - imagine a 1 followed by 24 zeros! Even our own Milky Way galaxy isn't lacking in stars, boasting over 100 billion of them, including our very own Sun. These stars are like giant balls of burning gas, primarily hydrogen with some helium and a sprinkle of other elements. Each star burns through its life over a very long time, some lasting a few million years while others can shine for trillions! As they age, these stellar furnaces go through different phases, constantly changing throughout their incredible lifespans.
+              </div>
+
+              <div class="theory-heading" id="birth">Birth</div>
+              <div class="theory-content">
+                Imagine giant clouds of gas and dust floating in space, like cosmic dust bunnies! These are called molecular clouds, and they're the cradles where new stars are born. These clouds can be enormous, containing way more stuff than our sun, and they can stretch for hundreds of light-years (which is a very long way!). <br><br>
+
+                Because it's so cold in these clouds, the gas clumps together, kind of like how mist forms on a cold window. Over time, these clumps get denser and denser. Sometimes, they bump into each other or pull in more material, getting even bigger. The more stuff they have, the stronger their gravity becomes. <br><br>
+
+                Eventually, gravity wins! Some of these clumps get squeezed so tight that they start to heat up, like a ball of dough you knead for bread. This hot, dense center becomes a baby star, called a protostar. It's like the first tiny spark in a giant bonfire. A bunch of these newborn stars together are called a stellar cluster, a kind of cosmic nursery where many baby stars grow up. And the entire cloud where all this happens? That's a stellar nursery, the place where future stars are born!
+              </div>
+
+              <div class="theory-img">
+                <img src="../images/theories/stars.jpg" alt="" class="img-fluid">
+              </div>
+
+              <div class="theory-heading" id="life">Life</div>
+              <div class="theory-content">
+                A newborn star, called a protostar, gets its initial heat from shrinking really fast, like a bouncy ball getting warm when you squeeze it hard. After millions of years, things get even more intense at the star's center. The pressure and heat become so strong that they squeeze the tiniest parts of its main fuel, hydrogen, together, causing a kind of mini-explosion called nuclear fusion. This fusion process releases a lot of energy, which is like lighting a fire inside the star. This fire keeps the star hot and puffy, preventing it from collapsing under its own gravity. <br><br>
+
+                When a star is happily fusing hydrogen into helium in its core, astronomers call it a "main sequence star." This is like the star's adult stage, and it lasts for the longest part of its life, millions or even billions of years. During this time, the star slowly changes its brightness, size, and temperature. Our Sun is currently in this adult phase, roughly halfway through! <br><br>
+                
+                Just like a car uses gas for fuel, a star burns through its hydrogen fuel. The bigger the star, the faster it burns through its fuel supply. Think of a giant bonfire compared to a small candle. The bonfire burns much brighter and uses up its fuel faster. So, massive stars burn super hot and fast, only lasting a few million years. On the other hand, smaller stars burn cooler and slower, lasting for trillions of years, even longer than the universe is right now!
+              </div>
+
+              <div class="theory-img">
+                <img src="../images/theories/sun-theory.jpg" alt="" class="img-fluid">
+              </div>
+
+              <div class="theory-heading" id="death">Death</div>
+              <div class="theory-content">
+                Imagine a star is like a giant furnace, burning fuel (hydrogen) to stay lit and fight off gravity trying to crush it. But even furnaces run out of fuel eventually. <br>
+                <strong>For low-mass stars (like our Sun):</strong>
+                <ul>
+                  <li>When the hydrogen fuel runs low, the star's core shrinks, but this squeezing also makes it hotter.</li>
+                  <li>The star puffs up like a giant balloon, becoming a red giant. (This will happen to our Sun in a few billion years!)</li>
+                  <li>Some red giants become unstable and pulse, puffing out and losing some of their outer layers</li>
+                  <li>Eventually, all the outer layers blow away, leaving behind a beautiful glowing cloud of gas and dust called a planetary nebula.</li>
+                  <li>The leftover core is a hot, Earth-sized cinder called a white dwarf, slowly cooling down over billions of years.</li>
+                </ul>
+                <img src="../images/theories/stars-1.jpg" alt="helix-nebula"  class="img-fluid">
+                
+                <br><br><br>
+                <strong>For high-mass stars:</strong>
+                <ul>
+                  <li>These stars are like super furnaces, burning through fuel faster and hotter.</li>
+                  <li>They can fuse heavier elements like carbon and even iron, but this doesn't last as long.</li>
+                  <li>When they run out of fuel completely, the iron core collapses very fast.</li>
+                  <li>This collapse triggers a giant explosion called a supernova, brighter than billions of stars combined!</li>
+                  <li>The core can become crushed into an incredibly dense object, either a neutron star or a black hole.</li>
+                </ul>
+                <img src="../images/theories/stars-2.jpg" alt=""  class="img-fluid">
+                <br><br><br>
+                <strong>The important part?</strong> <br>
+                All these stellar deaths enrich space with new elements. The leftover dust and gas from these explosions become building blocks for new stars and planets, like recycling materials in the universe!
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+        <div class="keep-exploring">Keep Exploring</div>
+        <div class="explore-more-container">
+            <div class="explore-item">
+              <a href="./black-hole"><div class="explore-item-img-black-hole"></div></a>
+              <div class="explore-item-name">Black Hole</div>
+              <div class="explore-item-arrow"><svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24"><g><path d="M0,0h24v24H0V0z" fill="none"/></g><g><polygon points="6.23,20.23 8,22 18,12 8,2 6.23,3.77 14.46,12"/></g></svg></div>
+              <!-- <div class="explore-item-arrow">&#8594;</div> -->
+            </div>
+
+            <div class="explore-item">
+              <a href="./big-bang"><div class="explore-item-img-big-bang"></div></a>
+              <div class="explore-item-name">Big Bang</div>
+              <div class="explore-item-arrow"><svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24"><g><path d="M0,0h24v24H0V0z" fill="none"/></g><g><polygon points="6.23,20.23 8,22 18,12 8,2 6.23,3.77 14.46,12"/></g></svg></div>
+            </div>
+
+            <div class="explore-item">
+              <a href="./galaxies"><div class="explore-item-img-galaxies"></div></a>
+              <div class="explore-item-name">Galaxies</div>
+              <div class="explore-item-arrow"><svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24"><g><path d="M0,0h24v24H0V0z" fill="none"/></g><g><polygon points="6.23,20.23 8,22 18,12 8,2 6.23,3.77 14.46,12"/></g></svg></div>
+            </div>
+        </div>
+      </section>
+      <!-- <hr class="hr"> -->
+  
+      <footer class="footer">
+        <div class="footer-container">
+          <div class="footer-row">
+    
+            <div class="footer-col">
+              <ul>
+                <a href="#" id="" class="logo"><img src="../images/space-logo-removebg-preview.png" alt="cosmo-logo"></a>
+              </ul>
+            </div>
+    
+            <div class="footer-col">
+              <ul>
+                <li><a href="/" id="">Home</a></li>
+                <li><a href="../solar-system-explore" id="">Explore Space</a></li>
+                <li><a href="../cosmic-blast" id="">Games</a></li>
+                <li><a href="../rockets" id="">Rockets</a></li>
+                <li><a href="../blogs" id="">Blogs</a></li>
+                <li><a href="/#theories" id="">Theories</a></li>
+                <li><a href="/#missions" id="">Missions</a></li>
+              </ul>
+            </div>
+    
+            <div class="footer-col social-links ">
+              <ul>
+                <li><a href="" id="">Instagram</a></li>
+                <li><a href="" id="">Facebook</a></li>
+                <li><a href="" id="">Twitter</a></li>
+                <li><a href="../about">About Us</a></li>
+              </ul>
+            </div>
+    
+            <div class="footer-col">
+              <div class="newsletter">
+                <form action="/subscribe" method="POST">
+                  <!-- <p>Subscribe to our newsletter</p> -->
+                  <label for="newsletter_email"><p>Subscribe to our newsletter</p></label>
+                  <input type="email" placeholder="Enter your email" name="email" id="email">
+                  <button type="submit">Subscribe</button>
+                </form>
+              </div>
+            </div>
+    
+          </div>
+    
+        </div>
+        <div class="copyright">
+          <p>&copy; 2024 Cosmic Chronicles. All rights reserved.</p>
+        </div>
+      </footer>
+
+      <script src="../js/header.min.js"></script>
+      <script src="../js/top-scroll.min.js"></script>
 </body>
 </html>

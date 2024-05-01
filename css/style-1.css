@@ -303,7 +303,7 @@ section .explore-more-container .explore-item a .explore-item-img-mission-chandr
 
 section .explore-more-container .explore-item .explore-item-name{
     color: white;
-    font-size: 200%;
+    font-size: 2rem;
     font-weight: 800;
     margin-top: -60px;
     margin-left: 10px;
@@ -340,7 +340,6 @@ section .explore-more-container .explore-item .explore-item-arrow{
 
 @media(max-width: 768px){
     .hero-right-section{
-        /* border: 1px solid blue; */
         height: 45vh;
         margin-top: -80vh;
         margin-left: 50px;
@@ -396,8 +395,4 @@ section .explore-more-container .explore-item .explore-item-arrow{
         height: 300px;
     }
 
-    /* section .explore-more-container .explore-item{
-        height: 50%;
-        width: 100%;
-    } */
 }

@@ -3,9 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Galaxies | Cosmic Chronicles</title>
+    <link rel="icon" type="image/x-icon" href="../images/space-logo-64-cropped.ico" sizes="64x64">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/theories.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
-    <h1>In production</h1>
+    <nav style="top: 100px;">
+        <div class="logo">
+            <a href="/"><img src="../images/space-logo-removebg-preview.png" alt="Cosmo-logo"></a>
+        </div>
+        <div class="hamburger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+          </div>
+          <ul class="navbar-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="../solar-system-explore">Explore Space</a></li> 
+            <li><a href="../cosmic-blast">Games</a></li>
+            <li><a href="../rockets">Rockets</a></li>
+            <li><a href="../blogs">Blogs</a></li>
+            <li><form action="./logout" method="POST">
+              <button class="login-button">LOGOUT</button>
+            </form></li>
+          </ul>
+        </nav>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">
+        <span class="material-symbols-outlined">arrow_upward</span>
+    </button>
+
+  <section>
+    <div class="row">
+      <div class="theory-section">
+        <div class="col-md-3">
+          <div class="table-content">
+              <h3>Contents</h3>
+              <ul>
+                  <li><a href="#the-beginning">The Beginning</a></li>
+                  <li><a href="#our-milky-way">Our Milky Way</a></li>
+              </ul>
+          </div>
+        </div>
+        <div class="col-md-9">
+          <div class="theory-container">
+              <div class="theory-heading" id="the-beginning">The Beginning</div>
+              <div class="theory-content">
+                Imagine galaxies as giant islands in space! They're made up of billions of stars, along with dust and gas, all held together by gravity, like an invisible force.
+                <br><br>
+                <ul>
+                  <li><strong>Sizes can vary greatly:</strong> Some galaxies are massive, containing trillions of stars and stretching millions of light-years across (a light-year is the distance light travels in a year, which is super far!). Others are smal</li>
+                  <li><strong>Black holes can be giant residents:</strong> Many big galaxies have supermassive black holes at their centers, like super strong vacuum cleaners that gobble up anything that gets too close! These black holes can be billions of times heavier than our sun!</li>
+                  <li><strong>Different shapes exist:</strong> Galaxies come in all sorts of shapes, like giant pinwheels (spirals), giant balls (elliptical), or even more irregular shapes.</li>
+                  <li><strong>They're quite old:</strong> Most galaxies are billions of years old, some almost as old as the universe itself (which is around 13.8 billion years old!). The youngest known galaxy is still pretty old though, at about 500 million years old.</li>
+                  <li><strong>Not always alone:</strong> Galaxies can hang out in groups of a hundred or so, like a cosmic neighborhood. These groups can be even bigger, forming clusters with thousands of galaxies! Groups and clusters can clump together even further into superclusters, but these aren't held together by gravity as strongly.</li>
+                  <li><strong>The universe is connected:</strong> All these galaxies, big and small, groups, clusters, and superclusters are like a giant cosmic web, with empty spaces and walls of galaxies scattered throughout.</li>
+                </ul>
+              </div>
+
+              <div class="theory-heading" id="our-milky-way">Our Milky Way</div>
+              <div class="theory-content">
+                <ul>
+                  <li><strong>Our address in space: Milky Way galaxy!</strong> It's our cosmic home, a giant spiral galaxy with a flat disc of stars stretching over 100,000 light-years (super far!).</li>
+                  <li><strong>Earth's location:</strong> Our solar system, with our sun and planets (including Earth!), is nestled within one of the spiral arms, kind of like an outer suburb in this giant city of stars. We're not right in the center, but about halfway out.</li>
+                  <li><strong>Our galactic journey:</strong> It takes a really long time to travel around our galaxy! Our solar system takes about 240 million years to complete one full orbit around the Milky Way's center.</li>
+                  <li><strong>The Milky Way's glow:</strong> If you look up at the night sky on a clear night and see a faint, milky white path stretching across it, that's our Milky Way galaxy! We see it edge-on, like looking at a pizza from the side.</li>
+                  <li><strong>Galactic neighbors:</strong> We're not alone! The Milky Way lives in a group with over 50 other galaxies, called the Local Group. It's like a cosmic neighborhood. These neighbors come in different sizes, from smaller ones with just a few billion stars (dwarf galaxies) to a giant one called Andromeda, our closest big galactic neighbor.</li>
+                  <li><strong>Bigger cosmic structures:</strong> Our Local Group isn't isolated. It's located near a much larger gathering of galaxies called the Virgo cluster, and the whole thing is part of an even bigger structure called the Laniakea supercluster. It's like neighborhoods within cities within counties!</li>  
+                </ul>
+              </div>
+
+              <div class="theory-img">
+                <img src="../images/theories/galaxy.jpg" alt="" class="img-fluid">
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+        <div class="keep-exploring">Keep Exploring</div>
+        <div class="explore-more-container">
+            <div class="explore-item">
+              <a href="./black-hole"><div class="explore-item-img-black-hole"></div></a>
+              <div class="explore-item-name">Black Hole</div>
+              <div class="explore-item-arrow"><svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24"><g><path d="M0,0h24v24H0V0z" fill="none"/></g><g><polygon points="6.23,20.23 8,22 18,12 8,2 6.23,3.77 14.46,12"/></g></svg></div>
+              <!-- <div class="explore-item-arrow">&#8594;</div> -->
+            </div>
+
+            <div class="explore-item">
+              <a href="./stars"><div class="explore-item-img-sun"></div></a>
+              <div class="explore-item-name">Stars</div>
+              <div class="explore-item-arrow"><svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24"><g><path d="M0,0h24v24H0V0z" fill="none"/></g><g><polygon points="6.23,20.23 8,22 18,12 8,2 6.23,3.77 14.46,12"/></g></svg></div>
+            </div>
+
+            <div class="explore-item">
+              <a href="./big-bang"><div class="explore-item-img-big-bang"></div></a>
+              <div class="explore-item-name">Big Bang</div>
+              <div class="explore-item-arrow"><svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24"><g><path d="M0,0h24v24H0V0z" fill="none"/></g><g><polygon points="6.23,20.23 8,22 18,12 8,2 6.23,3.77 14.46,12"/></g></svg></div>
+            </div>
+        </div>
+      </section>
+      <!-- <hr class="hr"> -->
+  
+      <footer class="footer">
+        <div class="footer-container">
+          <div class="footer-row">
+    
+            <div class="footer-col">
+              <ul>
+                <a href="#" id="" class="logo"><img src="../images/space-logo-removebg-preview.png" alt="cosmo-logo"></a>
+              </ul>
+            </div>
+    
+            <div class="footer-col">
+              <ul>
+                <li><a href="/" id="">Home</a></li>
+                <li><a href="../solar-system-explore" id="">Explore Space</a></li>
+                <li><a href="../cosmic-blast" id="">Games</a></li>
+                <li><a href="../rockets" id="">Rockets</a></li>
+                <li><a href="../blogs" id="">Blogs</a></li>
+                <li><a href="/#theories" id="">Theories</a></li>
+                <li><a href="/#missions" id="">Missions</a></li>
+              </ul>
+            </div>
+    
+            <div class="footer-col social-links ">
+              <ul>
+                <li><a href="" id="">Instagram</a></li>
+                <li><a href="" id="">Facebook</a></li>
+                <li><a href="" id="">Twitter</a></li>
+                <li><a href="../about">About Us</a></li>
+              </ul>
+            </div>
+    
+            <div class="footer-col">
+              <div class="newsletter">
+                <form action="/subscribe" method="POST">
+                  <!-- <p>Subscribe to our newsletter</p> -->
+                  <label for="newsletter_email"><p>Subscribe to our newsletter</p></label>
+                  <input type="email" placeholder="Enter your email" name="email" id="email">
+                  <button type="submit">Subscribe</button>
+                </form>
+              </div>
+            </div>
+    
+          </div>
+    
+        </div>
+        <div class="copyright">
+          <p>&copy; 2024 Cosmic Chronicles. All rights reserved.</p>
+        </div>
+      </footer>
+
+      <script src="../js/header.min.js"></script>
+      <script src="../js/top-scroll.min.js"></script>
 </body>
 </html>

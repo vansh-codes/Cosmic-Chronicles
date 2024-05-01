@@ -14,6 +14,7 @@ section{
     background-color: #d8d8d8;
     margin: 0;
     padding-top: 100px;
+    overflow-x: hidden;
 }
 
 section div.theory-section{
@@ -70,7 +71,7 @@ section .theory-section .theory-container{
     letter-spacing: .1rem;
     color: black;
     /* padding-top: 50px; */
-    padding: 50px 4rem 0 4rem;
+    padding: 50px 1rem 0 4rem;
     width: 90%;
     /* border: 1px solid blue; */
 }
@@ -97,13 +98,14 @@ section .theory-section .theory-container .theory-content{
 section .theory-section .theory-container .theory-img img{
     width: 90%;
     padding: 0 0 50px 0;
-    /* margin-top: -50px; */
+    margin-top: -80px;
     /* mix-blend-mode: color; */
     /* border: 1px solid red; */
     /* width: 9%; */
 }
 
 section .keep-exploring{
+    margin-top: 80px;
     margin-left: 50px;
     letter-spacing: .4rem;
     font-size: 150%;
@@ -115,20 +117,21 @@ section .theory-section .theory-container .theory-content ul li{
 }
 
 section .explore-more-container{
-    border: 1px solid red;
-    margin: 0 20px;
+    /* border: 1px solid red; */
+    /* margin: 0 20px; */
+    margin: 5px 40px;
     display: flex;
     flex-direction: row;
     flex-grow: 1;
-    gap: 30px;
+    gap: 20px;
     padding: 10px;
+    flex-wrap: wrap;
 }
 
 section .explore-more-container .explore-item{
     cursor: pointer;
     /* max-width: 33%; */
-    flex-wrap: wrap;
-    width: 55%;
+    width: 30%;
     /* border: 1px solid yellow; */
     padding: 20px;
 }
@@ -183,16 +186,12 @@ section .explore-more-container .explore-item a .explore-item-img-dark-matter{
     /* background-color: #bbb; */
 }
 
-.row{
-    border: 1px solid red;
-}
-
 section .explore-more-container .explore-item .explore-item-name{
     color: white;
     width: 80%;
     /*border: 1px solid red;    /* font-size: 200%;  */
     /* font-size: clamp(1.5rem, 3vw, 2.5rem); */
-    font-size: clamp(0.5rem, -1.375rem + 6vw, 2rem);
+    font-size: clamp(1rem, -1.375rem + 6vw, 2rem);
     font-weight: 800;
     margin-top: -4rem;
     margin-left: 1rem;
@@ -240,51 +239,35 @@ section .theory-content table .col .block-data{
     letter-spacing: .07rem;
 }
 
+@media(max-width: 920px){
+    section .explore-more-container .explore-item{
+        width: 47%;
+        /* border: 2px solid red; */
+    }
+}
 
 @media screen and (max-width: 768px) {
-    /* .explore-more-container {
-      flex-direction: column; 
-    } */
     
-    /* .explore-item{
-        flex-basis: 100%;
-        height: 400px;
-    } */
-
     section .explore-more-container .explore-item{
-        width: 60%;
+        width: 95%;
     }
-
+    
     section .theory-section .table-content{
         width: 100%;
         /* margin-left: 5px;j */
     }
-
+    
     section .theory-section .theory-container{
         width: 100%;
         text-wrap: wrap;
         padding: 20px;
         margin: 20px;
     }
+}
 
-    section .explore-more-container .explore-item a .explore-item-img-black-hole{
-        height: 300px;
-        border: 1px solid red;
-    }
-
-    section .explore-more-container .explore-item a .explore-item-img-dark-matter{
-        height: 300px;
-    }
-
-    section .explore-more-container .explore-item a .explore-item-img-big-bang{
-        height: 300px;
-    }
-
-    section .explore-more-container .explore-item a .explore-item-img-galaxies{
-        height: 300px;
-    }
-
-    section .explore-more-container .explore-item a .explore-item-img-sun{
+@media screen and (max-width: 320px) {
+    section .explore-more-container .explore-item{
+        width: 100%;
         height: 300px;
     }
 }

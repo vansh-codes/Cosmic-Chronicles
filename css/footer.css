@@ -1,8 +1,6 @@
 .footer{
     position: relative;
-    /* background-color: #111111; */
     background-color: #131418;
-    /* background-color: red; */
     margin: 0;
     padding: 70px 0;
     font-family: sans-serif;
@@ -16,16 +14,12 @@
 .hr{
     width: 80%;
     margin: 7% 0 5% 10%;
-    /* margin-top: 10%; */
-    /* margin-left: 10%; */
 }
 
 .footer-container{
-    /* border: 1px solid red; */
     max-width: 1170px;
     margin: auto;
     z-index: 10;
-    /* padding: 70px 0; */
 }
 
 ul{
@@ -33,31 +27,30 @@ ul{
 }
 
 .footer-row{
-    /* border: 1px solid yellow; */
     background-color: #131418;
     display: flex;
-    gap: 20px;
+    gap: 30px;
     flex-wrap: wrap;
-    /* margin-bottom: 10px ; */
 }
 
 .footer-col{
-    /* border: 1px solid darkblue; */
     width: 17%;
-    line-height: 1.5rem;
-    /* padding: 10px 15px;  0 15px */
+    line-height: 1.8rem;
+    text-align: left;
+}
+
+.footer-col:last-of-type{
+    width: 25%;
 }
 
 .footer-col a{
     font-size: large;
     position: relative;
-    /* border: 1px solid red; */
 }
 
 .footer-col .logo img{
     height: 200px;
     width: 200px;
-    /* border: 1px solid red; */
 }
 
 /* .footer-col ul li:not(:last-child){
@@ -76,7 +69,6 @@ ul{
 
 .footer-col ul li a:hover{
     color: #ffffff;
-    /* padding-left: 8px; */
 }
 
 .footer-col ul li a:after{
@@ -119,8 +111,6 @@ ul{
     display: flex;
     flex-direction: column;
     gap: 15px;
-    /* border: 1px solid yellow; */
-    /* margin-top: -100px; */
 }
 
 .footer-col .newsletter form label p{
@@ -129,7 +119,6 @@ ul{
     color: #bbbbbb;
     margin: 0;
     text-wrap: nowrap;
-    /* border: 1px solid red; */
 }
 
 .footer-col .newsletter form button,input{
@@ -148,7 +137,6 @@ ul{
 }
 
 .footer-col .newsletter form button:hover{
-    /* color: red; */
     font-weight: bold;
 }
 
@@ -156,7 +144,6 @@ ul{
     width: 100%;
     margin: 0;
     background-color: #131418;
-    /* border: 1px solid blue; */
     width: 100% ;
 }
 
@@ -168,7 +155,6 @@ ul{
     width: 100%;
     text-align: center;
     padding-bottom: 20px;
-    /* border: 1px solid red; */
 }
 
 /* Responsiveness */
@@ -176,12 +162,21 @@ ul{
     .footer-col{
         width: 30%;
         margin-bottom: 30px;
-        /* border: 3px solid yellow; */
+    }
+    .footer-col:last-of-type{
+        width: 45%;
+        margin-left: 50%;
+        transform: translate(-50%, 0);
     }
 }
 
 @media(max-width:  574px){
     .footer-col{
-        width: 40%;
+        width: 50%;
+        margin-left: 50%;
+        transform: translate(-50%, 0);
+    }
+    .footer-col:last-of-type{
+        width: 50%;
     }
 }
