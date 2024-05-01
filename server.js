@@ -15,7 +15,8 @@ const nodemailer = require('nodemailer');
 const UserModel = require('./js/users');
 const newsModel = require('./js/newsletter');
 
-const mongoURI = 'mongodb://localhost:27017/sessions';
+const mongoURI = process.env.MONGO_URL;
+const PORT = process.env.PORT || 2000;
 
 mongoose.connect(mongoURI).then((res) => {
     console.log("mongoDB Connected");
@@ -35,15 +36,6 @@ app.use(session({
 }));
 
 app.use(bodyParser.urlencoded({ extended: true }));
-
-    /* const isAuth = (req, res, next) => {
-        if(req.session.isAuth){
-            next();
-        }
-        else{
-            res.redirect('/login');
-        }
-    } */
 
     app.post("/login", async (req, res) => {
         const {email, password} = req.body;
@@ -144,21 +136,6 @@ const myRouterApp = require('./router');
 
 app.use(myRouterApp);
 
-app.listen(2000, () => {
+app.listen(PORT, () => {
     console.log('Server is running on http://localhost:2000');
 });
-           /*  transporter.sendMail(mailOptions, function(error, info){
-            if (error) {
-                console.log(error);
-            } else {
-                console.log('Email sent: ' + info.response);
-            }
-            }); */
-
-
-// app.get('/', (req, res) => {
-//     // res.sendFile(__dirname + '/game.html');
-//     // res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
-//     req.session.isAuth = true;
-//     res.sendFile(__dirname + '/index.html');
-// });
