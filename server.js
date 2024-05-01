@@ -11,8 +11,8 @@ require('dotenv').config();
 
 const nodemailer = require('nodemailer');
 
-const UserModel = require('./js/users');
-const newsModel = require('./js/newsletter');
+const UserModel = require('./js/users.min.js');
+const newsModel = require('./js/newsletter.min.js');
 
 const mongoURI = process.env.MONGO_URL;
 const PORT = process.env.PORT || 2000;
