@@ -7,13 +7,16 @@ const bcrypt = require('bcryptjs');
 const mongoDBSession = require('connect-mongodb-session')(session);
 const app = express();
 app.use(express.static('./'));
+require('dotenv').config();
+const Mailgen = require('mailgen');
+
+const nodemailer = require('nodemailer');
 
 const UserModel = require('./js/users');
 const newsModel = require('./js/newsletter');
 
-// const mongoURI = 'mongodb://localhost:27017/sessions';
-const mongoURI = process.env.MONGO_URL;
-const PORT = process.env.PORT || 2000;
+const mongoURI = 'mongodb://localhost:27017/sessions';
+
 mongoose.connect(mongoURI).then((res) => {
     console.log("mongoDB Connected");
 });
@@ -78,6 +81,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
         });
     
         await user.save();
+
         // res.send('alert("You have succesfully signed in. Login to continue")');
         res.redirect('/login');
     });
@@ -96,26 +100,60 @@ app.use(bodyParser.urlencoded({ extended: true }));
         let user = await newsModel.findOne({email});
         if(user){
             console.log("user exists");
-            res.status(200).redirect('/');}
+            res.status(200).redirect('/');
+        }
         else{
             user = new newsModel({
                 email
             });
-            await user.save();
-            return res.redirect('/');
+        
+        let transporter = nodemailer.createTransport({
+            service: 'gmail',
+            host: "smtp.gmail.com",
+            auth: {
+                // user: "vanshchaurasiya1557@gmail.com",
+                // pass: "prjh qvus hhde mamb"
+                user: process.env.EMAIL_ID,
+                pass: process.env.EMAIL_APP_PASS
+            }
+        });
+
+        let mailOptions = {
+            from: 'vanshchaurasiya1557@gmail.com',
+            to: email,
+            subject: 'Sending Email using Node.js',
+            html: `<center><b>COSMIC CHRONICLES</b> <br><br>
+            <p>Thank you for subscribing to our newsletter. You will now receive all the latest news and updates from our website.</p></center>`,
+            // text: 'That was easy!'
+        };
+
+        transporter.sendMail(mailOptions).then((info) => {
+            console.log("Email sent!!");
+            return res.status(201).redirect('/');
+        }).catch((err) => {
+            return res.status(500).json({ msg: err });
+        });
+            
+        await user.save();
+        // return res.redirect('/');
    
         }
     });
-
 
 const myRouterApp = require('./router');
 
 app.use(myRouterApp);
 
-app.listen(PORT, () => {
+app.listen(2000, () => {
     console.log('Server is running on http://localhost:2000');
 });
-
+           /*  transporter.sendMail(mailOptions, function(error, info){
+            if (error) {
+                console.log(error);
+            } else {
+                console.log('Email sent: ' + info.response);
+            }
+            }); */
 
 
 // app.get('/', (req, res) => {

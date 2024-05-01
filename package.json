@@ -2,7 +2,7 @@
   "name": "public",
   "version": "1.0.0",
   "description": "",
-  "main": "game.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -13,10 +13,13 @@
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.2",
     "connect-mongodb-session": "^5.0.0",
+    "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "express-openid-connect": "^2.17.1",
     "express-session": "^1.18.0",
+    "mailgen": "^2.0.28",
     "mongoose": "^8.3.1",
+    "nodemailer": "^6.9.13",
     "nodemon": "^3.1.0"
   }
 }

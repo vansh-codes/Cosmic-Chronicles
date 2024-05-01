@@ -44,12 +44,14 @@ ul{
 .footer-col{
     /* border: 1px solid darkblue; */
     width: 17%;
+    line-height: 1.5rem;
     /* padding: 10px 15px;  0 15px */
 }
 
- .footer-col a{
+.footer-col a{
     font-size: large;
     position: relative;
+    /* border: 1px solid red; */
 }
 
 .footer-col .logo img{
@@ -121,10 +123,12 @@ ul{
     /* margin-top: -100px; */
 }
 
-.footer-col .newsletter form p{
+.footer-col .newsletter form label p{
     width: 100%;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
+    color: #bbbbbb;
     margin: 0;
+    text-wrap: nowrap;
     /* border: 1px solid red; */
 }
 
@@ -152,6 +156,8 @@ ul{
     width: 100%;
     margin: 0;
     background-color: #131418;
+    /* border: 1px solid blue; */
+    width: 100% ;
 }
 
 .copyright p{
@@ -161,6 +167,8 @@ ul{
     height: fit-content;
     width: 100%;
     text-align: center;
+    padding-bottom: 20px;
+    /* border: 1px solid red; */
 }
 
 /* Responsiveness */
@@ -168,11 +176,12 @@ ul{
     .footer-col{
         width: 30%;
         margin-bottom: 30px;
+        /* border: 3px solid yellow; */
     }
 }
 
 @media(max-width:  574px){
     .footer-col{
-        width: 50%;
+        width: 40%;
     }
 }

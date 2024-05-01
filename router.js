@@ -31,7 +31,7 @@ router.get('/solar-system-explore', function(req, res){
     if(isValidPlanet(requestedPlanet)){
         return res.sendFile(__dirname + "/planets/" + requestedPlanet + ".html");
     }
-    return res.send("<img src='https://http.cat/404'></img>");
+    return res.send("<img src='https://http.cat/404'></img><br><a href='/'><h3>Go to Home page</h3></a>");
 }); 
 
 function isValidPlanet(planetName) {
@@ -72,7 +72,7 @@ router.get('/theory/:theories', function(req, res){
     if(isValidTheory(requestedTheory)){
         return res.sendFile(__dirname + "/theory/" + requestedTheory + ".html");
     }
-    return res.send("<img src='https://http.cat/404'></img>");
+    return res.send("<img src='https://http.cat/404'></img><br><a href='/'><h3>Go to Home page</h3></a>");
 }); 
 
 function isValidTheory(theoryName) {
@@ -94,91 +94,3 @@ function isValidMission(missionName) {
 }
 
 module.exports = router; 
-
-
-/* ==== Planets ==== */
-
-/* router.get('/planets/:planet', function(req, res){
-    const requestedName = req.params.planet.toLowerCase(); // Lowercase for case-insensitive matching
-
-  // Check for valid planets
-  if (isValidPlanet(requestedName)) {
-    return res.sendFile(__dirname + "/" + requestedName + ".html");
-  }
-  res.end();
-}); */
-
-  // Check for files with .css or .js extension
-/*   const extensionMatch = requestedName.match(/\.(css|js)$/i); // Regex for case-insensitive match
-  if (extensionMatch) {
-    return res.sendFile(__dirname + "/" + requestedName); // Send file without adding .html
-  }
-    return res.status(404).send("<img src='https://http.cat/404'></img>"); */
-
-/* router.get('/planets/earth', function(req, res){
-    res.sendFile(__dirname + "/planets/earth.html");
-});
-
-router.get('/planets/mercury', function(req, res){
-    res.sendFile(__dirname + "/planets/mercury.html");
-});
-
-router.get('/planets/venus', function(req, res){
-    res.sendFile(__dirname + "/planets/venus.html");
-});
-
-router.get('/planets/mars', function(req, res){
-    res.sendFile(__dirname + "/planets/mars.html");
-});
-
-router.get('/planets/saturn', function(req, res){
-    res.sendFile(__dirname + "/planets/saturn.html");
-});
-
-router.get('/planets/jupiter', function(req, res){
-    res.sendFile(__dirname + "/planets/jupiter.html");
-});
-
-router.get('/planets/neptune', function(req, res){
-    res.sendFile(__dirname + "/planets/neptune.html");
-});
-
-router.get('/planets/uranus', function(req, res){
-    res.sendFile(__dirname + "/planets/uranus.html");
-});
-
-router.get('/planets/sun', function(req, res){
-    res.sendFile(__dirname + "/planets/sun.html");
-});
-
-router.get('/planets/moon', function(req, res){
-    res.sendFile(__dirname + "/planets/moon.html");
-}); */
-
-
-
-
-/* ==== THEORIES ==== */
-/* router.get('/theory/big-bang', function(req, res){
-    res.sendFile(__dirname + "/theory/big-bang.html");
-});
-
-router.get('/theory/black-hole', function(req, res){
-    res.sendFile(__dirname + "/theory/black-hole.html");
-});
-
-router.get('/theory/parallel-universe', function(req, res){
-    res.sendFile(__dirname + "/theory/parallel-universe.html");
-});
-
-router.get('/theory/dark-matter', function(req, res){
-    res.sendFile(__dirname + "/theory/dark-matter.html");
-});
-
-router.get('/theory/stars-theory', function(req, res){
-    res.sendFile(__dirname + "/theory/stars.html");
-});
-
-router.get('/theory/galaxies', function(req, res){
-    res.sendFile(__dirname + "/theory/galaxies.html");
-}); */

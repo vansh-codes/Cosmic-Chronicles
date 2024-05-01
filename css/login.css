@@ -10,9 +10,9 @@
         /* border: 1px solid red; */
         height: 400px;
         width: 400px;
-        background-image: url("../images/rocket-doodle-removebg-preview.png");
+        /* background-image: url("../images/rocket-doodle-removebg-preview.png");
         background-size: cover;
-        background-repeat: no-repeat;
+        background-repeat: no-repeat; */
         margin: 12% auto;
       }
 
@@ -23,20 +23,29 @@
         mix-blend-mode: color-burn;
       }
 
+      .bg{
+        height: 100vh;
+        width: 100%;
+        background-image: url("../images/login-signup-bg.gif");
+        background-size: cover;
+        /* border: 1px solid red; */
+      }
+
       .login-box {
-        background-image: linear-gradient(135deg, rgb(0,0,0,0.8), rgb(0,0,19,0.7)), url("../images/rocket-doodle-removebg-preview.png");
+        /* background-image: linear-gradient(135deg, rgb(0,0,0,0.8), rgb(0,0,19,0.7)), url("../images/rocket-doodle-removebg-preview.png"); */
         background-size: cover;
         background-repeat: no-repeat;
         position: absolute;
         top: 50%;
-        left: 75%;
+        left: 50%;
         width: 400px;
         padding: 40px;
         margin: 20px auto;
         transform: translate(-50%, -55%);
         /* background: rgba(0, 0, 0, 0.634); */
         box-sizing: border-box;
-        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+        /* box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6); */
+        box-shadow: 0 15px 25px rgba(122, 122, 122, 0.4);
         /* box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6); */
         border-radius: 10px;
         font-family: "Poppins", sans-serif;
@@ -86,8 +95,8 @@
         /* border: 1px solid red; */
         position: absolute;
         font-size: 70%;
-        margin-top: 40px;
-        margin-bottom: 10px;
+        margin-top: 3rem;
+        margin-bottom: 2rem;
       }
 
       .login-box .user-box input:focus ~ label,
@@ -128,7 +137,8 @@
         display: block;
         border: 1px solid #fff;
       }
-      .login-box p:last-child {
+      .login-box p:last-of-type {
+        margin-top: 10px;
         color: #aaa;
         font-size: 14px;
       }
@@ -143,39 +153,3 @@
         text-decoration: underline;
         border-radius: 5px;
       }
-
- /*      .buttons-container {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        margin-top: 20px;
-        gap: 15px;
-      }
-
-      .buttons-container span a{
-        text-decoration: none;
-        color: #272727;
-      }
-
-      .google-login-button {
-        border-radius: 20px;
-        box-sizing: border-box;
-        padding: 10px 15px;
-        box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
-          rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-        cursor: pointer;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-        font-size: 11px;
-        gap: 5px;
-        border: none;
-        background-color: white;
-      }
-      .google-icon {
-        font-size: 18px;
-        margin-bottom: 1px;
-      } */

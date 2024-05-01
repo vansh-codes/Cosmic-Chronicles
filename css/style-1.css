@@ -42,6 +42,7 @@ body{
 .hero-heading h1,p{
     text-align: center;
     margin-top: 100px;
+    color: #fff;
     /* background-color: transparent; */
     /* top: 50%; */
     /* transform: translate(0, 50%); */
@@ -154,6 +155,7 @@ body{
 }
 
 #moon-phase{
+    position: relative;
     box-shadow: 1px 5px 5px 2px black;
     display: flex;
     flex-direction: column;
@@ -161,8 +163,10 @@ body{
     align-items: center;
     color: white;
     width: auto;
-    padding: 20px;
-    margin: -40px 15% 60px 15%;
+    margin-left: 50%;
+    transform: translate(-50%, 0);
+    padding: 30px;
+   /*  margin: -40px 15% 60px 15%; */
     background-color: rgb(13, 12, 12);
 }
 
@@ -190,10 +194,11 @@ body{
 }
 
 #moon-phase .moon-phase-note{
+    position: absolute;
     font-size: 0.8rem;
-    margin-top: 20px;
-    margin-bottom: -10px;
-    margin-left: 58%;
+    font-size: clamp(0.5rem, 0.125rem + 1.2vw, 0.8rem);
+    bottom: 0;
+    right: 0;
 }
 
 section .explore-more-container{
@@ -207,6 +212,7 @@ section .explore-more-container{
     flex-wrap: wrap;
 }
 
+
 section .explore-more-container .explore-item{
     cursor: pointer;
     /* max-width: 30%; */
@@ -218,7 +224,7 @@ section .explore-more-container .explore-item{
 
 section .explore-more-container .explore-item a .explore-item-img-black-hole{
     background-image: url("../images/theories/black-hole.jpg");
-    height: 600px;
+    height: 500px;
     width: 100%;
     background-size: cover;
     background-position: center;
@@ -228,7 +234,7 @@ section .explore-more-container .explore-item a .explore-item-img-black-hole{
 
 section .explore-more-container .explore-item a .explore-item-img-sun{
     background-image: url("../images/theories/sun-theory.jpg");
-    height: 600px;
+    height: 500px;
     width: 100%;
     background-size: cover;
     background-position: center;
@@ -238,7 +244,7 @@ section .explore-more-container .explore-item a .explore-item-img-sun{
 
 section .explore-more-container .explore-item a .explore-item-img-galaxies{
     background-image: url("../images/theories/galaxy.jpg");
-    height: 600px;
+    height: 500px;
     width: 100%;
     background-size: cover;
     background-position: center;
@@ -248,7 +254,7 @@ section .explore-more-container .explore-item a .explore-item-img-galaxies{
 
 section .explore-more-container .explore-item a .explore-item-img-dark-matter{
     background-image: url("../images/theories/dark-matter.jpg");
-    height: 600px;
+    height: 500px;
     width: 100%;
     background-size: cover;
     background-position: center;
@@ -258,7 +264,7 @@ section .explore-more-container .explore-item a .explore-item-img-dark-matter{
 
 section .explore-more-container .explore-item a .explore-item-img-big-bang{
     background-image: url("../images/theories/big-bang.jpg");
-    height: 600px;
+    height: 500px;
     width: 100%;
     background-size: cover;
     background-position: center;
@@ -268,7 +274,7 @@ section .explore-more-container .explore-item a .explore-item-img-big-bang{
 
 section .explore-more-container .explore-item a .explore-item-img-mission-mars-poster{
     background-image: url("../images/missions/missionMars_poster.jpeg");
-    height: 600px;
+    height: 500px;
     width: 100%;
     background-size: cover;
     background-position: center;
@@ -278,7 +284,7 @@ section .explore-more-container .explore-item a .explore-item-img-mission-mars-p
 
 section .explore-more-container .explore-item a .explore-item-img-mission-chandrayaan1-poster{
     background-image: url("../images/missions/chandrayaan1_poster.jpeg");
-    height: 600px;
+    height: 500px;
     width: 100%;
     background-size: cover;
     background-position: center;
@@ -287,7 +293,7 @@ section .explore-more-container .explore-item a .explore-item-img-mission-chandr
 }
 section .explore-more-container .explore-item a .explore-item-img-mission-chandrayaan2-poster{
     background-image: url("../images/missions/chandrayaan2_poster.jpeg");
-    height: 600px;
+    height: 500px;
     width: 100%;
     background-size: cover;
     background-position: center;
@@ -301,6 +307,9 @@ section .explore-more-container .explore-item .explore-item-name{
     font-weight: 800;
     margin-top: -60px;
     margin-left: 10px;
+    /* font-size: clamp(0.5rem, -1.375rem + 6vw, 2rem); */
+    font-size: clamp(0.5rem, -0.573rem + 3.4335vw, 2rem);
+    font-size: clamp(1rem, 0.6364rem + 2.9091vw, 2rem);
 }
 
 section .explore-more-container .explore-item .explore-item-arrow{
@@ -317,21 +326,50 @@ section .explore-more-container .explore-item .explore-item-arrow{
 
 
 
-@media(max-width: 768px){
+@media(max-width: 920px){
+    section .explore-more-container .explore-item{
+        width: 47%;
+        height: 50%;
+    }
     .hero-right-section{
+        /* border: 1px solid red; */
         height: 45vh;
         margin-top: -80vh;
-        border: 1px solid red;
+    }
+}
+
+@media(max-width: 768px){
+    .hero-right-section{
+        /* border: 1px solid blue; */
+        height: 45vh;
+        margin-top: -80vh;
+        margin-left: 50px;
     }
     section .explore-more-container .explore-item{
-        width: 60%;
+        width: 95%;
+        height: 50%;
     }
     #moon-phase{
         width: 100%;
     }
+    #moon-phase #date,#moon-phase-name,#moon-phase-percentage,#moon-phase-next,#moon-phase-more{
+        font-size: 0.9rem;
+    }
+    section .explore-more-container .explore-item{
+        width: 100%;
+        height: 30%;
+        /* border: 1px solid blue; */
+    }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 320px) {
+    .hero-right-section{
+        /* border: 1px solid yellow; */
+        height: 35vh;
+        margin-top: -90vh;
+        margin-right: -140px;
+    }
+
     .pop-theories-container {
         flex-direction: column; /* Change to column layout on small screens */
     }
@@ -339,11 +377,27 @@ section .explore-more-container .explore-item .explore-item-arrow{
     .pop-theory{
         flex-basis: 100%; /* Make each item take full width on small screens */
     }
-
+    
     #moon-phase{
-        width: 50%;
+        width: 100%;
+        font-size: 0.8rem;
     }
+
+    #moon-phase #moon-phase-icon{
+        font-size: 1000%;
+    }
+
+    #moon-phase #date,#moon-phase-name,#moon-phase-percentage,#moon-phase-next,#moon-phase-more{
+        font-size: 0.6rem;
+    }
+
     section .explore-more-container .explore-item{
         width: 100%;
+        height: 300px;
     }
+
+    /* section .explore-more-container .explore-item{
+        height: 50%;
+        width: 100%;
+    } */
 }

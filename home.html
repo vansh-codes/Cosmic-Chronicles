@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" type="image/x-icon" href="./images/space-logo-64-cropped.ico" sizes="64x64">
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">   -->
-    <link rel="stylesheet" href="css/style-1.css"/>
-    <link rel="stylesheet" href="css/header.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> 
+    <link rel="stylesheet" href="css/style-1.css">
+    <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
     <title>Cosmic Chronicles</title>
   </head>
@@ -28,9 +28,11 @@
             <li><a href="./cosmic-blast">Games</a></li>
             <li><a href="./rockets">Rockets</a></li>
             <li><a href="./blogs">Blogs</a></li>
-            <li><form action="./logout" method="POST">
+            <li>
+              <form action="./logout" method="POST">
                 <button class="login-button">LOGOUT</button>
-              </form></li>
+              </form>
+            </li>
             <!-- <li><a class="login-button" href="./login" id="auth">Login</a></li> -->
             <!-- <li><button class="join-button" href="#">Join</button></li> -->
           </ul>
@@ -51,67 +53,20 @@
     <marquee behavior="scroll slowly" direction="" id="marquee-fact">The Sun is a star located at the center of the Solar System.</marquee>
   </div>
 
-  <div id="moon-phase">
-    <div id="date"></div>
-    <div id="moon-phase-name"></div>
-    <div id="moon-phase-icon"></div>
-    <div id="moon-phase-percentage"></div>
-    <div id="moon-phase-next"></div>
-    <div id="moon-phase-more">To learn more visit <a href="/moon#moon-phase">here</a></div>
-    <div class="moon-phase-note">*Phase and Percentage may vary depending upon the location</div>
-  </div>
 
-<!--   <section class="hero-body">
-      <h2 class="theories-heading">Popular Theories</h2>
-      <div class="pop-theories-container">
-        <div class="pop-theory">
-          <img src="./images/theories/big-bang.jpg" alt="big-bang">
-          <h3>Big Bang Theory</h3>
-          <p>The Big Bang Theory is the leading explanation about how the universe began. At its simplest, it says the universe as we know it started with a small singularity, then inflated over the next 13.8 billion years to the cosmos that we know today.
-          Read more <a href="./theory/big-bang">here</a>
-        </p>
-      </div>
-        <div class="pop-theory">
-          <img src="./images/theories/black-hole.jpg" alt="black-hole">
-          <h3>Black Hole Theory</h3>
-          <p>A black hole is a place in space where gravity pulls so much that even light can not get out. The gravity is so strong because matter has been squeezed into a tiny space. This can happen when a star is dying. <br>
-            Read more <a href="./theory/black-hole">here</a>
-          </p>
-        </div>
-          <div class="pop-theory">
-            <img src="./images/theories/parallel-universe.jpg" alt="parallel-universe">
-            <h3>Parallel Universe Theory</h3>
-            <p>A parallel universe is a hypothetical self-contained reality co-existing with one's own. A specific group of parallel universes is called a "multiverse", although this term can also be used to describe the possible parallel universes that constitute reality. <br>
-              Read more <a href="./theory/parallel-universe">here</a>
-          </p>
+    <div class="row">
+      <div class="col-12">
+        <div id="moon-phase">
+          <div id="date"></div>
+          <div id="moon-phase-name"></div>
+          <div id="moon-phase-icon"></div>
+          <div id="moon-phase-percentage"></div>
+          <div id="moon-phase-next"></div>
+          <div id="moon-phase-more">To learn more visit <a href="/planets/moon#moon-phase">here</a></div>
+          <div class="moon-phase-note">*Phase and Percentage may vary depending upon the location</div>
         </div>
       </div>
-      <div class="pop-theories-container">
-        <div class="pop-theory">
-          <img src="./images/theories/sun-theory.jpg" alt="sun-theory">
-          <h3>Stars</h3>
-          <p>A star is an astronomical object consisting of a luminous spheroid of plasma held together by its own gravity. The nearest star to Earth is the Sun. Many other stars are visible to the naked eye from Earth during the night, appearing as a multitude of fixed luminous points in the sky due to their immense distance from Earth. 
-          Read more <a href="./theory/stars">here</a>
-        </p>
-      </div>
-        <div class="pop-theory">
-          <img src="./images/theories/galaxy.jpg" alt="galaxies">
-          <h3>Galaxies</h3>
-          <p>A galaxy is a gravitationally bound system of stars, stellar remnants, interstellar gas, dust, dark matter, and potentially dark energy. The word galaxy is derived from the Greek galaxias, literally "milky", a reference to the Milky Way galaxy. <br>
-            Read more <a href="./theory/galaxies">here</a>
-          </p>
-        </div>
-          <div class="pop-theory">
-            <img src="./images/theories/dark-matter.jpg" alt="dark-matter">
-            <h3>Dark Matter</h3>
-            <p>Dark matter, comprising 85% of the universe's matter, has a density of 2.241x10^-27 kg/m^3. Its existence is inferred from unexplained gravitational effects in astrophysics, challenging conventional theories of gravity.
-              Read more <a href="./theory/dark-matter">here</a>
-          </p>
-        </div>
-      </div>
-
-  </section> -->
-
+    </div>
 
 <section id="theories">
   <h2 class="theories-heading">Popular Theories</h2>
@@ -119,37 +74,37 @@
     <div class="explore-item">
       <a href="theory/big-bang"><div class="explore-item-img-big-bang"></div></a>
       <div class="explore-item-name">Big Bang</div>
-      <div class="explore-item-arrow">&#8594;</div>
+      <div class="explore-item-arrow"><svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24"><g><path d="M0,0h24v24H0V0z" fill="none"/></g><g><polygon points="6.23,20.23 8,22 18,12 8,2 6.23,3.77 14.46,12"/></g></svg></div>
     </div>
 
     <div class="explore-item">
       <a href="theory/black-hole"><div class="explore-item-img-black-hole"></div></a>
       <div class="explore-item-name">Black Hole</div>
-      <div class="explore-item-arrow">&#8594;</div>
+      <div class="explore-item-arrow"><svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24"><g><path d="M0,0h24v24H0V0z" fill="none"/></g><g><polygon points="6.23,20.23 8,22 18,12 8,2 6.23,3.77 14.46,12"/></g></svg></div>
     </div>
 
     <div class="explore-item">
       <a href="theory/stars"><div class="explore-item-img-sun"></div></a>
       <div class="explore-item-name">Stars</div>
-      <div class="explore-item-arrow">&#8594;</div>
+      <div class="explore-item-arrow"><svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24"><g><path d="M0,0h24v24H0V0z" fill="none"/></g><g><polygon points="6.23,20.23 8,22 18,12 8,2 6.23,3.77 14.46,12"/></g></svg></div>
     </div>
 
     <div class="explore-item">
       <a href="theory/galaxies"><div class="explore-item-img-galaxies"></div></a>
       <div class="explore-item-name">Galaxies</div>
-      <div class="explore-item-arrow">&#8594;</div>
+      <div class="explore-item-arrow"><svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24"><g><path d="M0,0h24v24H0V0z" fill="none"/></g><g><polygon points="6.23,20.23 8,22 18,12 8,2 6.23,3.77 14.46,12"/></g></svg></div>
     </div>
     
     <div class="explore-item">
       <a href="theory/dark-matter"><div class="explore-item-img-dark-matter"></div></a>
       <div class="explore-item-name">Dark Matter</div>
-      <div class="explore-item-arrow">&#8594;</div>
+      <div class="explore-item-arrow"><svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24"><g><path d="M0,0h24v24H0V0z" fill="none"/></g><g><polygon points="6.23,20.23 8,22 18,12 8,2 6.23,3.77 14.46,12"/></g></svg></div>
     </div>
 
-    <div class="explore-item">
+    <div class="explore-item ">
       <a href="theory/dark-matter"><div class="explore-item-img-dark-matter"></div></a>
       <div class="explore-item-name">Dark Matter</div>
-      <div class="explore-item-arrow">&#8594;</div>
+      <div class="explore-item-arrow"><svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24"><g><path d="M0,0h24v24H0V0z" fill="none"/></g><g><polygon points="6.23,20.23 8,22 18,12 8,2 6.23,3.77 14.46,12"/></g></svg></div>
     </div>
   </div>
 </section>
@@ -160,19 +115,19 @@
     <div class="explore-item">
       <a href="missions/mission-mars"><div class="explore-item-img-mission-mars-poster"></div></a>
       <div class="explore-item-name">Mission Mars</div>
-      <div class="explore-item-arrow">&#8594;</div>
+      <div class="explore-item-arrow"><svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24"><g><path d="M0,0h24v24H0V0z" fill="none"/></g><g><polygon points="6.23,20.23 8,22 18,12 8,2 6.23,3.77 14.46,12"/></g></svg></div>
     </div>
 
     <div class="explore-item">
       <a href="missions/chandrayaan-I"><div class="explore-item-img-mission-chandrayaan1-poster"></div></a>
       <div class="explore-item-name">Chandrayaan - I</div>
-      <div class="explore-item-arrow">&#8594;</div>
+      <div class="explore-item-arrow"><svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24"><g><path d="M0,0h24v24H0V0z" fill="none"/></g><g><polygon points="6.23,20.23 8,22 18,12 8,2 6.23,3.77 14.46,12"/></g></svg></div>
     </div>
 
     <div class="explore-item">
       <a href="missions/chandrayaan-II"><div class="explore-item-img-mission-chandrayaan2-poster"></div></a>
       <div class="explore-item-name">Chandrayaan - II</div>
-      <div class="explore-item-arrow">&#8594;</div>
+      <div class="explore-item-arrow"><svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24"><g><path d="M0,0h24v24H0V0z" fill="none"/></g><g><polygon points="6.23,20.23 8,22 18,12 8,2 6.23,3.77 14.46,12"/></g></svg></div>
     </div>
   </div>
 </section>
@@ -183,11 +138,8 @@
       <div class="footer-row">
 
         <div class="footer-col">
-          <ul>
-            <a href="#" id="" class="logo"><img src="./images/space-logo-removebg-preview.png" alt="cosmo-logo"></a>
-          </ul>
+            <a href="/" id="" class="logo"><img src="./images/space-logo-removebg-preview.png" alt="cosmo-logo"></a>
         </div>
-
         <div class="footer-col">
           <ul>
             <li><a href="#home" id="">Home</a></li>
@@ -213,7 +165,7 @@
           <div class="newsletter">
             <form action="/subscribe" method="POST">
               <!-- <p>Subscribe to our newsletter</p> -->
-              <label for="newsletter_email">Subscribe to our newsletter</label>
+              <label for="newsletter_email"><p>Subscribe to our newsletter</p></label>
               <input type="email" placeholder="Enter your email" name="email" id="email">
               <button type="submit">Subscribe</button>
             </form>
@@ -222,9 +174,9 @@
 
       </div>
 
-      <div class="copyright">
-        <p>&copy; 2024 Cosmic Chronicles. All rights reserved.</p>
-      </div>
+    </div>
+    <div class="copyright">
+      <p>&copy; 2024 Cosmic Chronicles. All rights reserved.</p>
     </div>
   </footer>
     

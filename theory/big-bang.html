@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Big Bang Theory | Cosmic Chronicles</title>
+    <link rel="icon" type="image/x-icon" href="../images/space-logo-64-cropped.ico" sizes="64x64">
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/theories.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> 
-
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
+
 <body>
     <nav style="top: 100px;">
         <div class="logo">
@@ -31,6 +33,10 @@
             </form></li>
           </ul>
         </nav>
+
+        <button onclick="topFunction()" id="myBtn" title="Go to top">
+          <span class="material-symbols-outlined">arrow_upward</span>
+      </button>
 
   <section>
     <div class="row">
@@ -111,71 +117,75 @@
             <div class="explore-item">
               <a href="./black-hole"><div class="explore-item-img-black-hole"></div></a>
               <div class="explore-item-name">Black Hole</div>
-              <div class="explore-item-arrow">&#8594;</div>
+              <div class="explore-item-arrow"><svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24"><g><path d="M0,0h24v24H0V0z" fill="none"/></g><g><polygon points="6.23,20.23 8,22 18,12 8,2 6.23,3.77 14.46,12"/></g></svg></div>
             </div>
 
             <div class="explore-item">
               <a href="./stars"><div class="explore-item-img-sun"></div></a>
               <div class="explore-item-name">Stars</div>
-              <div class="explore-item-arrow">&#8594;</div>
+              <div class="explore-item-arrow"><svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24"><g><path d="M0,0h24v24H0V0z" fill="none"/></g><g><polygon points="6.23,20.23 8,22 18,12 8,2 6.23,3.77 14.46,12"/></g></svg></div>
             </div>
             <div class="explore-item">
               <a href="./galaxies"><div class="explore-item-img-galaxies"></div></a>
               <div class="explore-item-name">Galaxies</div>
-              <div class="explore-item-arrow">&#8594;</div>
+              <div class="explore-item-arrow"><svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24"><g><path d="M0,0h24v24H0V0z" fill="none"/></g><g><polygon points="6.23,20.23 8,22 18,12 8,2 6.23,3.77 14.46,12"/></g></svg></div>
             </div>
         </div>
       </section>
       <!-- <hr class="hr"> -->
   
-  <footer class="footer">
-    <div class="footer-container">
-      <div class="footer-row">
-
-        <div class="footer-col">
-          <ul>
-            <a href="#" id="" class="logo"><img src="../images/space-logo-removebg-preview.png" alt="cosmo-logo"></a>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <ul>
-            <li><a href="#home" id="">Home</a></li>
-            <li><a href="./space-system-explore" id="">Explore Space</a></li>
-            <li><a href="./cosmic-blast" id="">Games</a></li>
-            <li><a href="./rockets" id="">Rockets</a></li>
-            <li><a href="./blogs" id="">Blogs</a></li>
-            <li><a href="#theories" id="">Theories</a></li>
-            <li><a href="#missions" id="">Missions</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col social-links ">
-          <ul>
-            <li><a href="" id="">Instagram</a></li>
-            <li><a href="" id="">Facebook</a></li>
-            <li><a href="" id="">Twitter</a></li>
-            <li><a href="./about">About Us</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <div class="newsletter">
-            <form action="/subscribe" method="POST">
-              <p>Subscribe to our newsletter</p>
-              <input type="text" placeholder="Enter your email" name="newsletter_email">
-              <button type="submit">Subscribe</button>
-            </form>
+      <footer class="footer">
+        <div class="footer-container">
+          <div class="footer-row">
+    
+            <div class="footer-col">
+              <ul>
+                <a href="#" id="" class="logo"><img src="../images/space-logo-removebg-preview.png" alt="cosmo-logo"></a>
+              </ul>
+            </div>
+    
+            <div class="footer-col">
+              <ul>
+                <li><a href="/" id="">Home</a></li>
+                <li><a href="../solar-system-explore" id="">Explore Space</a></li>
+                <li><a href="../cosmic-blast" id="">Games</a></li>
+                <li><a href="../rockets" id="">Rockets</a></li>
+                <li><a href="../blogs" id="">Blogs</a></li>
+                <li><a href="/#theories" id="">Theories</a></li>
+                <li><a href="/#missions" id="">Missions</a></li>
+              </ul>
+            </div>
+    
+            <div class="footer-col social-links ">
+              <ul>
+                <li><a href="" id="">Instagram</a></li>
+                <li><a href="" id="">Facebook</a></li>
+                <li><a href="" id="">Twitter</a></li>
+                <li><a href="../about">About Us</a></li>
+              </ul>
+            </div>
+    
+            <div class="footer-col">
+              <div class="newsletter">
+                <form action="/subscribe" method="POST">
+                  <!-- <p>Subscribe to our newsletter</p> -->
+                  <label for="newsletter_email"><p>Subscribe to our newsletter</p></label>
+                  <input type="email" placeholder="Enter your email" name="email" id="email">
+                  <button type="submit">Subscribe</button>
+                </form>
+              </div>
+            </div>
+    
           </div>
+    
         </div>
-      </div>
-      <div class="footer-row">
-      <div class="copyright">
-        <p>&copy; 2024 Cosmic Chronicles. All rights reserved.</p>
-      </div>
-    </div>
-    </div>
-  </footer>
-        <script src="/js/header.js"></script>
+        <div class="copyright">
+          <p>&copy; 2024 Cosmic Chronicles. All rights reserved.</p>
+        </div>
+      </footer>
+
+      <script src="../js/header.js"></script>
+      <script src="../js/top-scroll.js"></script>
+
 </body>
 </html>

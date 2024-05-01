@@ -13,7 +13,7 @@ function checkUsername() {
         document.getElementById("usernamespan").style.color="red";
         return false; //so that previous output is not taken by the program
     }    
-    usernamespan.innerHTML = "";
+    usernamespan.innerText = "";
     return true;    
 }
 
@@ -24,9 +24,10 @@ function validatePassword() {
     
     if (password !== confirmPass) {
         document.getElementById('cnfpswdSpan').innerHTML = "Passwords do not match";
+        document.getElementById("cnfpswdSpan").style.color="red";
         return false;
     } else {
-        document.getElementById('cnfpswdSpan').innerHTML = "";
+        document.getElementById('cnfpswdSpan').innerText = "";
         return true;
     }
 }
@@ -41,7 +42,7 @@ function checkPasswordStrength() {
     
     // Check length
     if (password.length < 8) {
-        document.getElementById("passSpan").innerHTML = "Password length is too short";
+        document.getElementById("passSpan").innerHTML = "Password length is too short, minimum 8 characters.";
         document.getElementById("passSpan").style.color="red";
     } else {
         // Check types of characters
@@ -86,19 +87,4 @@ function checkEmail() {
 
 function validateForm() {
     return checkUsername()  && validatePassword() && checkEmail();
-}
-
-function verifyCredentials(){
-   /*  var errormsg = document.getElementById("error-cred");
-    errormsg.innerText = document.body.message; */
-    
-    fetch('/login', { method: 'POST' })
-    .then(response => response.json()) // assuming the server returns JSON
-    .then(data => {
-        // Update the message in the HTML
-        document.getElementById('error-cred').innerText = data.message;
-        return false;
-    })
-    .catch(error => console.error('Error fetching logout message:', error));
-    return true;
 }

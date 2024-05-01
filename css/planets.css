@@ -65,21 +65,6 @@ h2.planet-name{
     margin-left: 25px;
 }
 
-/* .row{
-    margin: 30px 0;
-} */
-
-/* .blink{
-    animation: blink 1.5s infinite;
-    position: relative;
-}
-
-@keyframes blink {
-    0% { opacity: 1; }
-    50% { opacity: 0; }
-    100% { opacity: 1; }
-} */
-
 .back-btn{
     position: absolute;
     top: 10px;

@@ -15,10 +15,6 @@ router.get('/signin', function(req, res){
     res.sendFile(__dirname + "/signin.html");
 });
 
-/* router.get('/solar-system', function(req, res){
-    res.sendFile(__dirname + "/solar-index.html");
-}); */
-
 router.get('/solar-system-explore', function(req, res){
     res.sendFile(__dirname + "/solar.html");
 });
