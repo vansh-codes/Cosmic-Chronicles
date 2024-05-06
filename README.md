@@ -43,4 +43,6 @@ There are exciting possibilities for expanding Cosmic Chronicles further, such a
 
 Throughout this project, I've honed my skills in JavaScript, jQuery, Node.js, Express, and MongoDB. It's been an exciting learning experience, and I'm eager to continue growing as a developer.
 
+## That's all folks!
+
 Thank you for visiting Cosmic Chronicles. Let's embark on a journey to explore the vast reaches of space together! 🚀✨
