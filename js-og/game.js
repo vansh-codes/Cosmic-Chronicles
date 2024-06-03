@@ -172,6 +172,7 @@ document.addEventListener("DOMContentLoaded", function() {
         scoreDisplay.textContent = "Score: " + score;
         healthBar.style.width = health + "%";
         healthText.textContent = "Health: " + health + "%"; // Update health text
+        earth.style.opacity = health / 70;
         if (health <= 0) {
             endGame();
         }

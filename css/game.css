@@ -97,13 +97,13 @@ body{
 #earth {
     position: absolute;
     width: 400px;
-    height: 400px;
+    height: 200px;
     /* background-image: url('/fun_learn/pikaso_texttoimage_adorable-cartoon-style-Cartoonstyle-drawing-of-the.jpeg'); Add your earth image */
     background-size: cover;
-    bottom: 0;
+    bottom: -40px;
     left: 50%;
     transform: translateX(-50%);
-    transition: background-image 0.5s;
+    transition: opacity 0.5s ease;
     /* z-index: 10;        Ensure the earth is above the asteroids */
 }
 
@@ -111,8 +111,7 @@ body{
     position: absolute;
     width: 100%;
     height: 20px;
-    background-color: green;
-    bottom: 0;
+    top: 10px;
     z-index: 5;     /* Ensure the health bar is above the earth */
 }
 
@@ -141,7 +140,8 @@ body{
 
 #health-text{
     position: fixed;
-    left: 700px;
+    left: 50%;
+    transform: translate(-50%, 0);
     color: white;
     text-align: center;
     font-size: 1.2rem;

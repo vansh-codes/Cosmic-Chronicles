@@ -19,3 +19,8 @@ for(let i=0;i<3;i++){
         alert("Social Media not found");
     });
 }
+
+const logout = document.querySelector(".login-button");
+logout.addEventListener('click', function(){
+    alert('Logout Successful');
+});
