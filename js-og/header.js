@@ -12,3 +12,10 @@ hamburger.addEventListener('click', function(){
     //Hamburger Animation
     hamburger.classList.toggle("toggle");
 });
+
+const social = document.querySelectorAll("#social");
+for(let i=0;i<3;i++){
+    social[i].addEventListener('click', function(){
+        alert("Social Media not found");
+    });
+}
