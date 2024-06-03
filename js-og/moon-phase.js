@@ -90,7 +90,6 @@ function updateMoonPhaseDisplay() {
     var displayDate = 'Date: ' + currentDate.toDateString();
     var moonPhaseNameDisplay = 'Moon Phase: ' + phase;
     var moonPhaseIconDisplay = icon(phase);
-    // console.log(moonPhaseIconDisplay);
     var moonPhasePercentageDisplay = 'Percentage of Lunation: ' + moonInfo.percentage + '%';
     var moonPhaseNextDisplay = 'Next New Moon: ' + moonInfo.nextNewMoon;
 
@@ -100,9 +99,7 @@ function updateMoonPhaseDisplay() {
     document.getElementById('moon-phase-icon').innerHTML = moonPhaseIconDisplay;
     document.getElementById('moon-phase-percentage').innerHTML = moonPhasePercentageDisplay;
     document.getElementById('moon-phase-next').innerHTML = moonPhaseNextDisplay;
-    // var moonPhase = calculateMoonPhase(currentDate);
 
-    // document.getElementById('moon-phase').innerHTML = 'Moon Phase: ' + moonPhase;
 }
 
 // Update the moon phase display initially
@@ -122,7 +119,6 @@ function checkTime() {
 
 // Update the moon phase display every day
 setInterval(checkTime, 6*10000); // check every minute
-// setInterval(updateMoonPhaseDisplay, 1000); // Update every 24 hours
 
 const facts = [
     "The Sun is a star located at the center of the Solar System.",
@@ -145,4 +141,4 @@ function updateFacts() {
     marquee.textContent = facts[randomIndex];
 }
 
-setInterval(updateFacts, 60 * 1000); // Update every 24 hours
+setInterval(updateFacts, 60 * 1000); // Update every minute
