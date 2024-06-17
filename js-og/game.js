@@ -20,25 +20,33 @@ document.addEventListener("DOMContentLoaded", function() {
     let asteroids = [];
     let gameInterval;
 
+    const storedScore = localStorage.getItem("spaceDefenderScore");
+    if (storedScore) {
+        score = parseInt(storedScore);
+    }
+    scoreDisplay.textContent = "Score: " + score;
+
     startBtn.addEventListener("click", startGame);
     quitBtn.addEventListener("click", quitGame);
 
     function startGame() {
+        resetGame();
         interfaceDiv.style.display = "none";
         gameContainer.style.display = "block";
+        healthText.style.color = 'white';
         health = 100;
         updateHealthBar();
-        gameInterval = setInterval(createAsteroid, 1000); // Decreased interval for more frequent asteroid appearance
+        gameInterval = setInterval(createAsteroid, 500); // Decreased interval for more frequent asteroid appearance
     }
 
     function endGame() {
         clearInterval(gameInterval);
         gameContainer.style.display = "none";
         finalScore.textContent = score;
-        // interfaceDiv.style.display = "flex";
         endScreen.classList.remove("hidden");
         endScreen.style.display = "flex";
         
+        localStorage.setItem("spaceDefenderScore", score)
         const playBtn = document.getElementById("play-again-btn");
         const homeBtn = document.getElementById("home-btn");
         playBtn.addEventListener("click", function(){
@@ -68,9 +76,7 @@ document.addEventListener("DOMContentLoaded", function() {
     function quitGame() {
         clearInterval(gameInterval);
         gameContainer.style.display = "none";
-        // interfaceDiv.style.display = "flex";
         endGame();
-        // resetGame();
     }
 
 
@@ -111,7 +117,6 @@ document.addEventListener("DOMContentLoaded", function() {
             if (isColliding(asteroid, earth)) {
                 asteroidCollision(asteroid);
                 clearInterval(moveInterval);
-                // earthMissed();
             }
 
             if (asteroidTop >= window.innerHeight || asteroidLeft >= window.innerWidth) {
@@ -147,7 +152,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function asteroidCollision(asteroid) {
         // scoreDisplay.textContent = "Score: " + score;
-        health -= 10;
+        health -= 5;
         updateHealthBar();
         // healthBar.style.width = health + "%";
         if (asteroid.parentNode === document.body) { // Check if asteroid is a child of document body
@@ -173,6 +178,9 @@ document.addEventListener("DOMContentLoaded", function() {
         healthBar.style.width = health + "%";
         healthText.textContent = "Health: " + health + "%"; // Update health text
         earth.style.opacity = health / 70;
+        if(health<=30){
+            healthText.style.color = "red";
+        }
         if (health <= 0) {
             endGame();
         }
