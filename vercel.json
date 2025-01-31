@@ -3,25 +3,14 @@
     "builds": [
         {
             "src": "server.js",
-            "use": "@vercel/node"
-        },
-        {
-            "src": "/**",
-            "use": "@vercel/static"
+            "use": "@vercel/node",
+            "config": { "includeFiles": ["/**"], "maxDuration": 60 }
         }
     ],
-    "routes":[
+    "routes": [
         {
-            "src": "/",
-            "dest": "/home.html"
-        },
-        {
-            "src": "/blogs",
-            "dest": "/blogs.html"
-        },
-        {
-            "src": "/(.+)",
-            "dest": "/$1"
+            "src": "/(.*)",
+            "dest": "server.js"
         }
     ]
 }
