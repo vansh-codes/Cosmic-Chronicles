@@ -1,112 +1,120 @@
-// app.js
+require('dotenv').config();
 const express = require('express');
 const session = require('express-session');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
+const path = require("path");
 const mongoDBSession = require('connect-mongodb-session')(session);
 const app = express();
-app.use(express.static('./'));
-require('dotenv').config();
+
+// Optimize Static File Serving
+app.use(express.static(path.join(__dirname, "public"), { maxAge: "1d" }));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 const nodemailer = require('nodemailer');
 
-const UserModel = require('./js/users.min.js');
-const newsModel = require('./js/newsletter.min.js');
+const UserModel = require('./models/users.min');
+const newsModel = require('./models/newsletter.min.js');
 
 const mongoURI = process.env.MONGO_URL;
 const PORT = process.env.PORT || 2000;
 
-mongoose.connect(mongoURI).then((res) => {
-    console.log("mongoDB Connected");
-});
+// Async MongoDB Connection
+(async () => {
+  try {
+    await mongoose.connect(mongoURI, {
+      connectTimeoutMS: 60000,
+      serverSelectionTimeoutMS: 60000,
+      family: 4, // Force IPv4
+    });
+    console.log("MongoDB Connected");
+  } catch (err) {
+    console.error("MongoDB connection error:", err);
+  }
+})();
 
 const store = new mongoDBSession({
-    uri : mongoURI,
-    collection: 'mySessions',
+  uri: mongoURI,
+  collection: 'mySessions',
+  touchAfter: 24 * 3600, // Reduce write frequency
 });
 
 // Initialize session middleware
 app.use(session({
-    secret: 'secret session key', // Change this to a more secure secret for production
-    resave: false,
-    saveUninitialized: false,
-    store: store,
+  secret: process.env.SESSION_SECRET || 'secret session key', // Change this to a more secure secret for production
+  resave: false,
+  saveUninitialized: false,
+  store: store,
+  cookie: { maxAge: 1000 * 60 * 60 * 24 }, // 1 Day
 }));
 
-app.use(bodyParser.urlencoded({ extended: true }));
 
-    app.post("/login", async (req, res) => {
-        const {email, password} = req.body;
-        const user = await UserModel.findOne({email});
-        if(!user){
-            return res.redirect('/login');
-        }
-        
-        const isMatch = await bcrypt.compare(password, user.password);
-        
-        if(!isMatch){
-            return res.redirect('/login');
-        }
-    
-        req.session.isAuth = true;
-        res.redirect('/home');
+app.post("/login", async (req, res) => {
+  const { email, password } = req.body;
+  const user = await UserModel.findOne({ email });
+  if (!user || !(await bcrypt.compare(password, user.password))) {
+    return res.redirect('/login');
+  }
+
+  req.session.isAuth = true;
+  res.redirect('/home');
+});
+
+app.post("/signin", async (req, res) => {
+  const { username, email, password } = req.body;
+
+  let user = await UserModel.findOne({ email });
+
+  if (user) {
+    return res.redirect('/signin');
+  }
+
+  const hashedPassword = await bcrypt.hash(password, 12);
+  user = new UserModel({
+    username,
+    email,
+    password: hashedPassword
+  });
+
+  await user.save();
+
+  res.redirect('/login');
+});
+
+app.post("/logout", (req, res) => {
+  req.session.destroy((err) => {
+    if (err) return res.status(500).send("Logout failed");;
+    res.redirect('/');
+  })
+});
+
+app.post("/subscribe", async (req, res) => {
+  const { email } = req.body;
+  let user = await newsModel.findOne({ email });
+  if (user) {
+    console.log("user exists");
+    res.status(200).redirect('/');
+  }
+  else {
+    user = new newsModel({
+      email
     });
-    
-    app.post("/signin", async (req,res) => {
-        const {username, email, password} = req.body;
-    
-        let user = await UserModel.findOne({email});
-    
-        if(user){
-            return res.redirect('/signin');
-        }
-    
-        const hashedPassword = await bcrypt.hash(password, 12);
-        user = new UserModel({
-            username,
-            email,
-            password: hashedPassword
-        });
-    
-        await user.save();
 
-        res.redirect('/login');
-    });
-    
-    app.post("/logout", (req, res) => {
-        req.session.destroy((err) => {
-            if(err) throw err;
-            res.redirect('/');
-        })
+    let transporter = nodemailer.createTransport({
+      service: 'gmail',
+      host: "smtp.gmail.com",
+      auth: {
+        user: process.env.EMAIL_ID,
+        pass: process.env.EMAIL_APP_PASS
+      }
     });
 
-    app.post("/subscribe",async (req, res) => {
-        const {email} = req.body;
-        let user = await newsModel.findOne({email});
-        if(user){
-            console.log("user exists");
-            res.status(200).redirect('/');
-        }
-        else{
-            user = new newsModel({
-                email
-            });
-        
-        let transporter = nodemailer.createTransport({
-            service: 'gmail',
-            host: "smtp.gmail.com",
-            auth: {
-                user: process.env.EMAIL_ID,
-                pass: process.env.EMAIL_APP_PASS
-            }
-        });
-
-        let mailOptions = {
-            from: 'vanshchaurasiya1557@gmail.com',
-            to: email,
-            subject: ' Welcome to Cosmic Chronicles: Your Gateway to Space Exploration!',
-            html: `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    let mailOptions = {
+      from: 'vanshchaurasiya1557@gmail.com',
+      to: email,
+      subject: ' Welcome to Cosmic Chronicles: Your Gateway to Space Exploration!',
+      html: `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
             <html dir="ltr" xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office" lang="en">
              <head>
               <meta charset="UTF-8">
@@ -298,25 +306,25 @@ app.use(bodyParser.urlencoded({ extended: true }));
               </div>
              </body>
             </html>`,
-        };
+    };
 
-        transporter.sendMail(mailOptions).then((info) => {
-            console.log("Email sent!!");
-            return res.status(201).redirect('/');
-        }).catch((err) => {
-            return res.status(500).json({ msg: err });
-        });
-            
-        await user.save();
-        // return res.redirect('/');
-   
-        }
+    transporter.sendMail(mailOptions).then((info) => {
+      console.log("Email sent!!");
+      return res.status(201).redirect('/');
+    }).catch((err) => {
+      return res.status(500).json({ msg: err });
     });
+
+    await user.save();
+    // return res.redirect('/');
+
+  }
+});
 
 const myRouterApp = require('./router');
 
 app.use(myRouterApp);
 
 app.listen(PORT, () => {
-    console.log('Server is running on http://localhost:2000');
+  console.log('Server is running on http://localhost:2000');
 });
